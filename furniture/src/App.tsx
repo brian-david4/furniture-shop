@@ -1,7 +1,14 @@
+import { Routes, Route, useLocation } from "react-router-dom";
+import Home from "./Pages/Home";
+
 function App() {
+  const location = useLocation();
+
   return (
     <>
-      <h1>Furniture Store</h1>
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </>
   );
 }
