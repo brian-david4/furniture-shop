@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import HomeNavBar from "../Components/HomeNavBar/HomeNavBar";
 
 const Home = () => {
   return (
     <>
-      <h1>Furniture Store</h1>
+      <HomeNavBar />
       <Link to="/products">Shop</Link>
     </>
   );
