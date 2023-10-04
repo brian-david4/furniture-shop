@@ -8,7 +8,15 @@ const Home = () => {
   return (
     <>
       <div className={styles.homeBg}>
-        <Img src={[bgWEBP, bgJPG]} />
+        <Img
+          style={{ userSelect: "none", zIndex: -1 }}
+          draggable={false}
+          src={[bgWEBP, bgJPG]}
+        />
+        <div className={styles.homeTitle}>
+          <h1>perch &</h1>
+          <div id={styles.highland}>highland</div>
+        </div>
         <HomeNavBar />
       </div>
     </>

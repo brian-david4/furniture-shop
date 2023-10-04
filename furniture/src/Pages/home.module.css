@@ -11,3 +11,25 @@
   object-fit: cover;
   filter: brightness(0.75);
 }
+.homeTitle {
+  position: absolute;
+  left: 18%;
+  top: 10%;
+  width: fit-content;
+  height: fit-content;
+  /* background-color: azure; */
+}
+.homeTitle > h1,
+.homeTitle > div {
+  color: ivory;
+  user-select: none;
+  font-family: "Gambarino";
+  font-size: 70px;
+  line-height: 10px;
+}
+#highland {
+  position: relative;
+  left: 5vmin;
+  font-family: "Neue Montreal Italic";
+  letter-spacing: 3px;
+}

@@ -6,6 +6,14 @@
   font-family: "Neue Montreal Book";
   src: url("../Fonts/PPNeueMontreal-Book.otf");
 }
+@font-face {
+  font-family: "Neue Montreal Italic";
+  src: url("../Fonts/PPNeueMontreal-Italic.otf");
+}
+@font-face {
+  font-family: "Gambarino";
+  src: url("../Fonts/Gambarino-Regular.otf");
+}
 
 body {
   margin: 0;
