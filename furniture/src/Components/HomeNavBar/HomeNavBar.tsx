@@ -5,7 +5,6 @@ const HomeNavBar = () => {
   return (
     <>
       <div className={styles.navbar}>
-        <div className={styles.homeBtn}>HOME</div>
         <div className={styles.navLinks}>
           <Link className={styles.navLink} to="/products">
             shop
