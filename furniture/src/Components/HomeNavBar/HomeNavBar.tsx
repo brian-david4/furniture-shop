@@ -5,11 +5,15 @@ const HomeNavBar = () => {
   return (
     <>
       <div className={styles.navbar}>
-        <div>HOME</div>
+        <div className={styles.homeBtn}>HOME</div>
         <div className={styles.navLinks}>
-          <Link to="/products">shop</Link>
-          <Link to="/about">about</Link>
-          <div>cart</div>
+          <Link className={styles.navLink} to="/products">
+            shop
+          </Link>
+          <Link className={styles.navLink} to="/about">
+            about
+          </Link>
+          <div className={styles.navLink}>cart</div>
         </div>
       </div>
     </>

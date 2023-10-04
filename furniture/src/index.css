@@ -3,6 +3,11 @@
   --y: 377.5;
 }
 
+@font-face {
+  font-family: "Neue Montreal Book";
+  src: url("../Fonts/PPNeueMontreal-Book.otf");
+}
+
 body {
   margin: 0;
   padding: 0;
