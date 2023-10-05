@@ -1,5 +1,6 @@
-import HomeNavBar from "../Components/HomeNavBar/HomeNavBar";
 import { Img } from "react-image";
+import HomeNavBar from "../Components/HomeNavBar/HomeNavBar";
+import HomeFooter from "../Components/HomeFooter/HomeFooter";
 import styles from "./home.module.css";
 import bgWEBP from "/00.webp";
 import bgJPG from "/00.jpg";
@@ -18,6 +19,7 @@ const Home = () => {
           <div id={styles.highland}>highland</div>
         </div>
         <HomeNavBar />
+        <HomeFooter />
       </div>
     </>
   );
