@@ -12,6 +12,20 @@ import HomeFurniture from "../Components/HomeFurniture/HomeFurniture";
 
 const Home = () => {
   const [isHovered, setHovered] = useState(false);
+  const [furnitureHovered, setFurniture] = useState(false);
+  const [rugsHovered, setRugs] = useState(false);
+  const [decorHovered, setDecor] = useState(false);
+
+  const activeWrap = (key: number) => {
+    if (key === 0) return setFurniture(true);
+    if (key === 1) return setRugs(true);
+    if (key === 2) return setDecor(true);
+  };
+  const inactiveWrap = (key: number) => {
+    if (key === 0) return setFurniture(false);
+    if (key === 1) return setFurniture(false);
+    if (key === 2) return setFurniture(false);
+  };
   const { x, y } = useMousePosition();
   const size = isHovered ? 350 : 75;
 
@@ -42,8 +56,11 @@ const Home = () => {
           <div id={styles.highland}>highland</div>
         </div>
         <HomeNavBar />
-        <HomeFooter />
-        <HomeFurniture />
+        <HomeFooter
+          activeWrap={(key) => activeWrap(key)}
+          inactiveWrap={(key) => inactiveWrap(key)}
+        />
+        {furnitureHovered && <HomeFurniture />}
       </div>
     </>
   );

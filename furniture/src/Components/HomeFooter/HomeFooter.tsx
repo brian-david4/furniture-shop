@@ -1,12 +1,26 @@
 import styles from "./footer.module.css";
 
-const HomeFooter = () => {
+interface HomeFooterProps {
+  activeWrap: (key: number) => void;
+  inactiveWrap: (key: number) => void;
+}
+
+const HomeFooter = ({ activeWrap, inactiveWrap }: HomeFooterProps) => {
+  const footerItems = ["furniture", "rugs", "decorrr"];
   return (
     <>
       <div className={styles.footer}>
-        <div>furniture</div>
-        <div>rugs</div>
-        <div>decorrr</div>
+        {footerItems.map((item, index) => {
+          return (
+            <div
+              key={index}
+              onMouseEnter={() => activeWrap(index)}
+              onMouseLeave={() => inactiveWrap(index)}
+            >
+              {item}
+            </div>
+          );
+        })}
       </div>
     </>
   );
