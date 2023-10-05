@@ -1,0 +1,10 @@
+.furnitureSection {
+  position: fixed;
+  width: 25vw;
+  min-width: 250px;
+  height: 70%;
+  left: 2%;
+  top: 2%;
+  border-radius: 20px;
+  background-color: bisque;
+}

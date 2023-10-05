@@ -8,6 +8,7 @@ import bgWEBP from "/00.webp";
 import bgJPG from "/00.jpg";
 import bgWEBPbw from "/00BW.webp";
 import { useState } from "react";
+import HomeFurniture from "../Components/HomeFurniture/HomeFurniture";
 
 const Home = () => {
   const [isHovered, setHovered] = useState(false);
@@ -42,6 +43,7 @@ const Home = () => {
         </div>
         <HomeNavBar />
         <HomeFooter />
+        <HomeFurniture />
       </div>
     </>
   );
