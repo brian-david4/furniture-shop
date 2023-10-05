@@ -5,19 +5,11 @@ import HomeFurniture from "../Components/HomeFurniture/HomeFurniture";
 import { useMousePosition } from "../hooks/useMousePosition";
 import HomeNavBar from "../Components/HomeNavBar/HomeNavBar";
 import HomeFooter from "../Components/HomeFooter/HomeFooter";
+import HomeFurnContent from "../Components/HomeFurnContent/HomeFurnContent";
 import styles from "./home.module.css";
 import bgWEBP from "/00.webp";
 import bgJPG from "/00.jpg";
 import bgWEBPbw from "/00BW.webp";
-
-import footer00 from "/footer-hovers/00.webp";
-import footer00JPG from "/footer-hovers/00.jpg";
-
-import footer01 from "/footer-hovers/01.webp";
-import footer01JPG from "/footer-hovers/01.jpg";
-
-import footer02 from "/footer-hovers/02.webp";
-import footer02JPG from "/footer-hovers/02.jpg";
 
 const Home = () => {
   const [isHovered, setHovered] = useState(false);
@@ -33,8 +25,8 @@ const Home = () => {
   };
   const inactiveWrap = (key: number) => {
     if (key === 0) return setFurniture(false);
-    if (key === 1) return setFurniture(false);
-    if (key === 2) return setFurniture(false);
+    if (key === 1) return setRugs(false);
+    if (key === 2) return setDecor(false);
   };
   const { x, y } = useMousePosition();
   const size = isHovered ? 350 : 75;
@@ -44,7 +36,9 @@ const Home = () => {
       <div className={styles.homeBg}>
         <Img
           className={`${styles.colorBG} ${
-            furnitureHovered ? styles.brightness : ""
+            furnitureHovered || rugsHovered || decorHovered
+              ? styles.brightness
+              : ""
           }`}
           draggable={false}
           src={[bgWEBP, bgJPG]}
@@ -75,17 +69,7 @@ const Home = () => {
         <AnimatePresence mode="wait">
           {furnitureHovered && (
             <HomeFurniture>
-              <div className={styles.homeFurnWrapper}>
-                <div className={styles.imgWrapper}>
-                  <Img src={[footer00, footer00JPG]} />
-                </div>
-                <div className={styles.imgWrapper}>
-                  <Img src={[footer01, footer02JPG]} />
-                </div>
-                <div className={styles.imgWrapper}>
-                  <Img src={[footer02, footer02JPG]} />
-                </div>
-              </div>
+              <HomeFurnContent />
             </HomeFurniture>
           )}
         </AnimatePresence>
