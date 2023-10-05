@@ -53,6 +53,7 @@ const Home = () => {
           src={bgWEBPbw}
           draggable={false}
         />
+
         <div
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
@@ -61,11 +62,13 @@ const Home = () => {
           <h1>perch &</h1>
           <div id={styles.highland}>highland</div>
         </div>
+
         <HomeNavBar />
         <HomeFooter
           activeWrap={(key) => activeWrap(key)}
           inactiveWrap={(key) => inactiveWrap(key)}
         />
+
         <AnimatePresence mode="wait">
           {furnitureHovered && (
             <HomeFurniture>
