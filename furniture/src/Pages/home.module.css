@@ -8,11 +8,9 @@
   user-select: none;
 }
 .maskBG {
-  -webkit-mask-image: url("../../public/mask-black.svg");
-  -webkit-mask-size: 60px;
-  -webkit-mask-repeat: no-repeat;
-  filter: blur(2px);
+  display: none;
 }
+
 .homeTitle {
   position: absolute;
   left: 18%;
@@ -34,4 +32,13 @@
   left: 5vmin;
   font-family: "Neue Montreal Italic";
   letter-spacing: 3px;
+}
+@media (min-width: 768px) {
+  .maskBG {
+    -webkit-mask-image: url("../../public/mask-black.svg");
+    -webkit-mask-size: 60px;
+    -webkit-mask-repeat: no-repeat;
+    filter: blur(2px);
+    display: block;
+  }
 }
