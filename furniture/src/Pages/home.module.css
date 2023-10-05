@@ -1,15 +1,17 @@
-.homeBg {
-  height: 100vh;
-  width: 100vw;
-  background: image("00.webp", "00.jpg");
-  background-position: center;
-  background-size: cover;
-}
-.homeBg > img {
+.colorBG,
+.maskBG {
+  position: absolute;
   height: 100%;
   width: 100%;
   object-fit: cover;
   filter: brightness(0.75);
+  user-select: none;
+}
+.maskBG {
+  -webkit-mask-image: url("../../public/mask-black.svg");
+  -webkit-mask-size: 60px;
+  -webkit-mask-repeat: no-repeat;
+  filter: blur(2px);
 }
 .homeTitle {
   position: absolute;
