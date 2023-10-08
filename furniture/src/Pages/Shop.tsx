@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import MainNavBar from "../Components/MainNavBar/MainNavBar";
 
 const Shop = () => {
   return (
     <>
-      <h1>Shop/Products Page</h1>
+      <MainNavBar />
       <Link to="/products/shaggyRug">shaggy rug</Link>
     </>
   );

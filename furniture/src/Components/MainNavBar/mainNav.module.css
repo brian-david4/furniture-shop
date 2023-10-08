@@ -1,0 +1,12 @@
+.navbarContainer {
+  position: fixed;
+  height: 8vh;
+  min-height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: bisque;
+}
