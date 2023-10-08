@@ -2,15 +2,20 @@ import { Link } from "react-router-dom";
 import styles from "./navItem.module.css";
 
 interface MainNavItemProps {
-  children: React.ReactNode;
+  title: string;
   to: string;
 }
 
-const MainNavItem = ({ children, to }: MainNavItemProps) => {
+const MainNavItem = ({ title, to }: MainNavItemProps) => {
+  const titleSplit = title.split("");
   return (
     <div className={styles.navItemWrapper}>
       <Link className={styles.navItem} to={to}>
-        {children}
+        {titleSplit.map((char, index) => (
+          <span className={styles.ltrWrap} key={index} data-ltr={char}>
+            {char}
+          </span>
+        ))}
       </Link>
     </div>
   );

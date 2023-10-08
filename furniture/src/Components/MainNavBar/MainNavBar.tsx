@@ -4,9 +4,9 @@ import styles from "./mainNav.module.css";
 const MainNavBar = () => {
   return (
     <div className={styles.navbarContainer}>
-      <MainNavItem to="/">home</MainNavItem>
-      <MainNavItem to="/products">shop</MainNavItem>
-      <MainNavItem to="/about">about</MainNavItem>
+      <MainNavItem to="/" title="home" />
+      <MainNavItem to="/products" title="shop" />
+      <MainNavItem to="/about" title="about" />
     </div>
   );
 };

@@ -5,7 +5,12 @@ const Shop = () => {
   return (
     <>
       <MainNavBar />
-      <Link to="/products/shaggyRug">shaggy rug</Link>
+      <Link
+        style={{ position: "relative", top: "10 vh" }}
+        to="/products/shaggyRug"
+      >
+        shaggy rug
+      </Link>
     </>
   );
 };
