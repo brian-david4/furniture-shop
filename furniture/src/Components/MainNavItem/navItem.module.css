@@ -8,7 +8,7 @@
 .navItem {
   text-decoration: none;
   color: black;
-  font-family: "Neue Montreal Book";
+  font-family: "Vietnam Medium";
 }
 .navItem:hover > .ltrWrap {
   transform: translateY(-100%);
@@ -26,4 +26,9 @@
   top: 100%;
   left: 0;
   appearance: none;
+}
+@media (min-width: 768px) {
+  .navItem {
+    font-family: "Vietnam Light";
+  }
 }

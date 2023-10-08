@@ -14,7 +14,14 @@
   font-family: "Gambarino";
   src: url("../Fonts/Gambarino-Regular.otf");
 }
-
+@font-face {
+  font-family: "Vietnam Light";
+  src: url("../Fonts/BeVietnamPro-Light.otf");
+}
+@font-face {
+  font-family: "Vietnam Medium";
+  src: url("../Fonts/BeVietnamPro-Medium.otf");
+}
 body {
   margin: 0;
   padding: 0;
