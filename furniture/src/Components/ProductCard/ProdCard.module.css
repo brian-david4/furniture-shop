@@ -1,0 +1,6 @@
+.cardContainer {
+  width: 70vw;
+  height: 65vh;
+  min-width: 400px;
+  background-color: cadetblue;
+}

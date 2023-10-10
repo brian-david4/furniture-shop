@@ -1,5 +1,6 @@
 :root {
   --y: 377.5;
+  --header-height: 8vh;
 }
 
 @font-face {

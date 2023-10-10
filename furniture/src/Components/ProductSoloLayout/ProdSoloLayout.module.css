@@ -1,0 +1,11 @@
+.productLayout {
+  width: 100%;
+  position: relative;
+  top: calc(var(--header-height) + 2vh);
+  display: flex;
+  gap: 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+}
