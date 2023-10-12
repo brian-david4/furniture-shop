@@ -1,7 +1,6 @@
 .productLayout {
   width: 100%;
   position: relative;
-  top: calc(var(--header-height) + 2vh);
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 0px;
@@ -10,10 +9,12 @@
 @media (min-width: 768px) {
   .productLayout {
     grid-template-columns: repeat(2, 1fr);
+    top: calc(var(--header-height) + 2vh);
   }
 }
 @media (min-width: 1020px) {
   .productLayout {
     grid-template-columns: repeat(3, 1fr);
+    top: calc(var(--header-height) + 2vh);
   }
 }
