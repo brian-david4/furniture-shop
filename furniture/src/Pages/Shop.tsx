@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import MainNavBar from "../Components/MainNavBar/MainNavBar";
 import ProductCard from "../Components/ProductCard/ProductCard";
-import ProductSoloLayout from "../Components/ProductSoloLayout/ProductSoloLayout";
+import ProductLayout from "../Components/ProductLayout/ProductLayout";
 
 const Shop = () => {
   return (
@@ -14,9 +14,14 @@ const Shop = () => {
         shaggy rug
       </Link>
 
-      <ProductSoloLayout>
+      <ProductLayout>
         <ProductCard />
-      </ProductSoloLayout>
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </ProductLayout>
     </>
   );
 };

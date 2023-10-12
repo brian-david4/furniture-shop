@@ -1,4 +1,4 @@
-import styles from "./ProdSoloLayout.module.css";
+import styles from "./ProdLayout.module.css";
 
 interface ProductSoloLayoutProps {
   children: React.ReactNode;
