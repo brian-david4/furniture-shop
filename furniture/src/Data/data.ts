@@ -42,7 +42,7 @@ export const products: Product[] = [
   {
     id: { name: "ROCKING CHAIR", slug: "rocking-chair" },
     description:
-      "Formica is OWL&#39s first series, marking the beginning of the brand and workshop. The collection presents a series of seating variations in baltic birch plywood, a neutral material fit for any type of home or interior design project. As a means to be open and customisable, the series comes with a collection of add-ons in formica, which allows for a more playful and colourful design",
+      "Formica is OWL&#39;s first series, marking the beginning of the brand and workshop. The collection presents a series of seating variations in baltic birch plywood, a neutral material fit for any type of home or interior design project. As a means to be open and customisable, the series comes with a collection of add-ons in formica, which allows for a more playful and colourful design",
     price: 1500,
     measurement: { width: 60, height: 85 },
     image: rocking_chair,

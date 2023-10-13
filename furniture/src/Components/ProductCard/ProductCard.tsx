@@ -1,5 +1,6 @@
 import styles from "./ProdCard.module.css";
 import { Product } from "../../Data/Product";
+import { Link } from "react-router-dom";
 
 interface ProductCardProps {
   product: Product;
@@ -7,11 +8,17 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
-    <div className={styles.cardContainer}>
-      <img draggable={false} className={styles.prodImage} src={product.image} />
-      <div className={styles.prodCaption}>{product.id.name}</div>
-      <div className={styles.prodCaption}>{`£${product.price}`}</div>
-    </div>
+    <Link className={styles.link} to={`/products/${product.id.slug}`}>
+      <div className={styles.cardContainer}>
+        <img
+          draggable={false}
+          className={styles.prodImage}
+          src={product.image}
+        />
+        <div className={styles.prodCaption}>{product.id.name}</div>
+        <div className={styles.prodCaption}>{`£${product.price}`}</div>
+      </div>
+    </Link>
   );
 };
 

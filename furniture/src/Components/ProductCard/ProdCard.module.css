@@ -1,6 +1,10 @@
+.link {
+  text-decoration: none;
+  color: black;
+}
 .cardContainer {
   height: 80vh;
-  background-color: cadetblue;
+  /* background-color: cadetblue; */
   border: 1px solid black;
   display: flex;
   flex-direction: column;
@@ -16,5 +20,7 @@
   position: relative;
   margin-top: 5px;
   width: 100%;
-  background-color: antiquewhite;
+  /* background-color: antiquewhite; */
+  text-decoration: none;
+  color: black;
 }
