@@ -16,7 +16,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           src={product.image}
         />
         <div className={styles.prodCaption}>{product.id.name}</div>
-        <div className={styles.prodCaption}>{`£${product.price}`}</div>
+        <div className={styles.prodPrice}>{`£${product.price}`}</div>
       </div>
     </Link>
   );

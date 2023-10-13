@@ -8,7 +8,7 @@
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: end;
 }
 .prodImage {
   width: 100%;
@@ -16,11 +16,17 @@
   object-fit: cover;
   object-position: center;
 }
-.prodCaption {
+.prodCaption,
+.prodPrice {
   position: relative;
+  right: 1vmin;
   margin-top: 5px;
   width: 100%;
   /* background-color: antiquewhite; */
   text-decoration: none;
+  font-family: "Vietnam Light";
   color: black;
+}
+.prodPrice {
+  font-family: "Gambarino";
 }
