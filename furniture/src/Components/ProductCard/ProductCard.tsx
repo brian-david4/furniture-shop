@@ -1,10 +1,15 @@
 import styles from "./ProdCard.module.css";
+import { Product } from "../../Data/Product";
 
-const ProductCard = () => {
+interface ProductCardProps {
+  product: Product;
+}
+
+const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <div className={styles.cardContainer}>
-      <div className={styles.prodImage}></div>
-      <div className={styles.prodCaption}></div>
+      <img className={styles.prodImage} src={product.images[1]} />
+      <div className={styles.prodCaption}>{product.id.name}</div>
     </div>
   );
 };
