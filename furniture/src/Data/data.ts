@@ -1,13 +1,13 @@
 import { Product } from "./Product";
-import { olderdalenImg } from "../../public/product-images-array/product-images";
+import alum_otto from "/product-images/alum_ottoman.webp";
 
 export const products: Product[] = [
   {
-    id: { name: "OLDERDALEN", slug: "olderdalen" },
+    id: { name: "ALUMINIUM OTTOMAN", slug: "aluminium-ottoman" },
     description:
-      "OLDERDALEN bedside table is inspired by traditional Scandinavian craftsmanship. Its generous form supports your pre-sleep rituals, from charging your phone to storing your books and magazines.",
-    price: 75,
-    measurement: { width: 47, height: 43 },
-    images: olderdalenImg,
+      "La Pepino is a collection of seating variations, built on the repeating pattern of cylindrical cushions, and supported by an organically shaped base. Every piece comes fully upholstered in customisable fabrics, and plays with the different points of contact between cushion and body",
+    price: 1200,
+    measurement: { width: 70, height: 46 },
+    image: alum_otto,
   },
 ];
