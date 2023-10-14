@@ -1,14 +1,23 @@
 import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 import { products } from "../../Data/data";
+import styles from "./ProductPage.module.css";
 
 const ProductPage = () => {
   const { productName } = useParams();
   const product = products.find((prod) => prod.id.slug === productName);
   const pr = JSON.stringify(product);
 
+  useEffect(() => {
+    window.document.body.style.overflow = "hidden";
+    return () => {
+      window.document.body.style.overflow = "visible";
+    };
+  }, []);
+
   return (
     <>
-      <h1>{pr}</h1>
+      <div className={styles.productPage}>{pr}</div>
     </>
   );
 };
