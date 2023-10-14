@@ -9,7 +9,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 10vmin;
+  gap: 3vmin;
   border-top: 1px solid black;
 }
 @media (min-width: 768px) {
@@ -17,5 +17,7 @@
     bottom: auto;
     top: 0;
     border-bottom: 1px solid black;
+    font-size: 0.8rem;
+    justify-content: flex-end;
   }
 }

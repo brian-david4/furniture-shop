@@ -3,12 +3,13 @@
   color: black;
 }
 .cardContainer {
-  height: 80vh;
-  /* background-color: cadetblue; */
+  height: 50vh;
+  background-color: rgb(255, 247, 209);
   border: 1px solid black;
   display: flex;
   flex-direction: column;
   text-align: end;
+  transition: height 300ms ease-in-out;
 }
 .prodImage {
   width: 100%;
@@ -29,4 +30,9 @@
 }
 .prodPrice {
   font-family: "Gambarino";
+}
+@media (min-width: 768px) {
+  .cardContainer {
+    height: 80vh;
+  }
 }

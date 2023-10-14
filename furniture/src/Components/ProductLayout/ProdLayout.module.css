@@ -1,12 +1,13 @@
 .productLayout {
   width: 100%;
   position: relative;
+  top: 0;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 0px;
   /* background-color: bisque; */
 }
-@media (min-width: 768px) {
+@media (min-width: 512px) {
   .productLayout {
     grid-template-columns: repeat(2, 1fr);
     top: calc(var(--header-height));
