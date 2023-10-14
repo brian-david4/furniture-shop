@@ -1,10 +1,14 @@
 import { useParams } from "react-router-dom";
+import { products } from "../../Data/data";
 
 const ProductPage = () => {
   const { productName } = useParams();
+  const product = products.find((prod) => prod.id.slug === productName);
+  const pr = JSON.stringify(product);
+
   return (
     <>
-      <h1>{productName}</h1>
+      <h1>{pr}</h1>
     </>
   );
 };
