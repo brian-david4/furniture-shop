@@ -17,7 +17,21 @@ const ProductPage = () => {
 
   return (
     <>
-      <div className={styles.productPage}>{pr}</div>
+      <div className={styles.productPage}>
+        <div className={styles.imgContainer}>
+          <img src={product?.image} />
+        </div>
+
+        <div className={styles.prodDetails}>
+          <div className={styles.namePrice}>
+            <div>name: {product?.id.name}</div>
+            <div>price: {product?.price}</div>
+          </div>
+          <div>description: {product?.description}</div>
+          <div>height: {product?.measurement.height}</div>
+          <div>width: {product?.measurement.width}</div>
+        </div>
+      </div>
     </>
   );
 };
