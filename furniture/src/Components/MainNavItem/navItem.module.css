@@ -30,4 +30,8 @@
   .navItem {
     font-family: "Vietnam Light";
   }
+  .navItemWrapper {
+    position: relative;
+    right: 5vw;
+  }
 }
