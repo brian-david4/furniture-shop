@@ -4,11 +4,12 @@
 }
 .cardContainer {
   height: 50vh;
-  background-color: rgb(255, 247, 209);
+  background-color: rgb(255, 238, 232);
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  text-align: end;
+  text-align: center;
+  align-items: center;
   transition: height 300ms ease-in-out;
 }
 .prodImage {
@@ -22,11 +23,31 @@
   position: relative;
   right: 1vmin;
   margin-top: 5px;
-  width: 100%;
+  width: fit-content;
   /* background-color: antiquewhite; */
   text-decoration: none;
   font-family: "Vietnam Light";
   color: black;
+}
+.prodCaption::after,
+.prodPrice::after {
+  display: block;
+  position: relative;
+  content: "";
+  margin: auto;
+  height: 1px;
+  width: 100%;
+  background-color: black;
+  transition: opacity 200ms cubic-bezier(0.74, 0.24, 0, 1);
+}
+.prodCaption::after {
+  opacity: 0;
+}
+.prodCaption:hover::after {
+  opacity: 1;
+}
+.prodPrice:hover::after {
+  opacity: 0;
 }
 .prodPrice {
   font-family: "Gambarino";
