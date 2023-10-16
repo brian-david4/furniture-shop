@@ -1,9 +1,18 @@
 .navTitle {
-  position: absolute;
-  left: 2vmin;
+  /* position: absolute; */
   font-family: "Gambarino";
   align-self: flex-start;
   line-height: 0.5vmin;
+  user-select: none;
+}
+.link {
+  position: absolute;
+  left: 2vmin;
+  text-decoration: none;
+  color: black;
+  width: fit-content;
+  height: fit-content;
+  /* background-color: bisque; */
 }
 .navTitle > h1 {
   font-size: 1.5rem;
@@ -19,8 +28,10 @@
   }
 }
 @media (min-width: 768px) {
-  .navTitle {
+  .link {
     left: 10vmin;
+  }
+  .navTitle {
     display: flex;
   }
   .navTitle > h1 {
