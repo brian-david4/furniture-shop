@@ -1,0 +1,36 @@
+.navTitle {
+  position: absolute;
+  left: 2vmin;
+  font-family: "Gambarino";
+  align-self: flex-start;
+  line-height: 0.5vmin;
+}
+.navTitle > h1 {
+  font-size: 1.5rem;
+}
+#highland {
+  position: relative;
+  left: 5vmin;
+  font-family: "Vietnam Light";
+}
+@media (min-width: 540px) {
+  .navTitle > h1 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .navTitle {
+    left: 10vmin;
+    display: flex;
+  }
+  .navTitle > h1 {
+    font-size: 3rem;
+    position: relative;
+    bottom: 5px;
+  }
+  #highland {
+    font-size: 1.2rem;
+    transform: translateY(50%);
+    left: 1.5vmin;
+  }
+}
