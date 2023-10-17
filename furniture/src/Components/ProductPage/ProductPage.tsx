@@ -10,27 +10,45 @@ const ProductPage = () => {
 
   useEffect(() => {
     window.document.body.style.overflow = "hidden";
+    window.document.body.style.position = "fixed";
     return () => {
       window.document.body.style.overflow = "visible";
+      window.document.body.style.position = "static";
     };
   }, []);
 
   return (
     <>
       <div className={styles.productPage}>
-        <div className={styles.imgContainer}>
+        <section className={styles.imgContainer}>
           <img src={product?.image} />
-        </div>
+        </section>
 
-        <div className={styles.prodDetails}>
+        <section className={styles.prodDetails}>
           <div className={styles.namePrice}>
-            <div>name: {product?.id.name}</div>
-            <div>price: {product?.price}</div>
+            <div>{product?.id.name}</div>
+            <div>{`£${product?.price}`}</div>
           </div>
-          <div>description: {product?.description}</div>
-          <div>height: {product?.measurement.height}</div>
-          <div>width: {product?.measurement.width}</div>
-        </div>
+
+          <div className={styles.description}>
+            <div className={styles.desc}>{product?.description}</div>
+          </div>
+
+          <div className={styles.measurements}>
+            <div>
+              <span className={styles.title}>width:</span>{" "}
+              {product?.measurement.width}
+            </div>
+
+            <span className={styles.measure}>X</span>
+
+            <div>
+              <span className={styles.title}>height:</span>{" "}
+              {product?.measurement.height}
+            </div>
+            <div>(cm)</div>
+          </div>
+        </section>
       </div>
     </>
   );

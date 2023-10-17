@@ -3,11 +3,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: aqua;
 }
 .imgContainer {
-  height: 60vh;
+  height: 50vh;
   width: 100%;
-  background-color: aqua;
 }
 .imgContainer > img {
   height: 100%;
@@ -18,10 +18,31 @@
 .prodDetails {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   background-color: antiquewhite;
+  height: 40vh;
+  line-height: 25px;
+  font-family: "Neue Montreal Book";
 }
-.namePrice {
+.namePrice,
+.measurements {
   display: flex;
   width: 100%;
   justify-content: space-around;
+}
+.description {
+  padding-left: 5vmin;
+  padding-right: 5vmin;
+}
+.measurements {
+  position: relative;
+  left: 5vmin;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.measure {
+  font-family: "Gambarino";
+}
+.title {
+  font-family: "Neue Montreal Bold";
 }

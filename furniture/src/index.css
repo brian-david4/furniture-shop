@@ -23,6 +23,10 @@
   font-family: "Vietnam Medium";
   src: url("../Fonts/BeVietnamPro-Medium.otf");
 }
+@font-face {
+  font-family: "Neue Montreal Bold";
+  src: url("../Fonts/PPNeueMontreal-Bold.otf");
+}
 body {
   margin: 0;
   padding: 0;
