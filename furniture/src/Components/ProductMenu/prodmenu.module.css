@@ -5,9 +5,9 @@
   top: 2.5vmax;
   left: 50%;
   transform: translate(-50%);
-  background-color: rgba(140, 163, 173, 0.168);
+  background-color: rgba(191, 213, 222, 0.341);
   border-radius: 5px;
-  backdrop-filter: blur(50%);
+  backdrop-filter: blur(20px);
   z-index: 10;
   display: grid;
   place-items: center;

@@ -1,13 +1,14 @@
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ProductMenu from "../ProductMenu/ProductMenu";
 import { products } from "../../Data/data";
 import styles from "./ProductPage.module.css";
 
 const ProductPage = () => {
   const { productName } = useParams();
+  const [menuClicked, setMenuClicked] = useState(false);
+
   const product = products.find((prod) => prod.id.slug === productName);
-  const pr = JSON.stringify(product);
 
   useEffect(() => {
     window.document.body.style.overflow = "hidden";
@@ -20,8 +21,13 @@ const ProductPage = () => {
 
   return (
     <>
-      <ProductMenu />
-      <div className={styles.productPage}>
+      <ProductMenu
+        clicked={menuClicked}
+        setClicked={() => setMenuClicked(!menuClicked)}
+      />
+      <div
+        className={`${styles.productPage} ${menuClicked ? styles.bright : ""}`}
+      >
         <section className={styles.imgContainer}>
           <img src={product?.image} />
         </section>
