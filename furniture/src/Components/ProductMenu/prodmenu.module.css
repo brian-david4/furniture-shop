@@ -47,6 +47,7 @@
   display: grid;
   place-items: center;
   font-family: "Vietnam Light";
+  user-select: none;
 }
 [data-menu-clicked="true"] {
   transform: translateX(-50%);

@@ -27,6 +27,7 @@ const ProductPage = () => {
       />
       <div
         className={`${styles.productPage} ${menuClicked ? styles.bright : ""}`}
+        onClick={() => setMenuClicked(false)}
       >
         <section className={styles.imgContainer}>
           <img src={product?.image} />
