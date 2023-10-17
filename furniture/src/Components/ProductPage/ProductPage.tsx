@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import ProductMenu from "../ProductMenu/ProductMenu";
 import { products } from "../../Data/data";
 import styles from "./ProductPage.module.css";
 
@@ -19,6 +20,7 @@ const ProductPage = () => {
 
   return (
     <>
+      <ProductMenu />
       <div className={styles.productPage}>
         <section className={styles.imgContainer}>
           <img src={product?.image} />

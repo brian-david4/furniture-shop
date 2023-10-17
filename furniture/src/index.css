@@ -1,6 +1,7 @@
 :root {
   --y: 377.5;
   --header-height: 8vh;
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 @font-face {

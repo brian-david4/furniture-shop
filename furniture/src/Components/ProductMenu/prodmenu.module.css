@@ -1,0 +1,53 @@
+.menuBtn {
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  top: 2.5vmax;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: rgba(140, 163, 173, 0.168);
+  border-radius: 5px;
+  backdrop-filter: blur(50%);
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.menuContent {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 200%;
+  display: flex;
+  align-items: center;
+  transition: transform 250ms var(--ease-in-out-quart);
+}
+.burger {
+  width: 50%;
+}
+.burger::before,
+.burger::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 50%;
+  height: 1px;
+  margin: auto;
+  background-color: black;
+}
+.burger::after {
+  top: -5px;
+}
+.burger::before {
+  top: 5px;
+}
+.close {
+  width: 50%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-family: "Vietnam Light";
+}
+[data-menu-clicked="true"] {
+  transform: translateX(-50%);
+}
