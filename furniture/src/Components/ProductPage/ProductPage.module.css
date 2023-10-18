@@ -30,6 +30,7 @@
 }
 .namePrice,
 .measurements {
+  position: relative;
   display: flex;
   width: 100%;
   justify-content: space-around;
@@ -49,4 +50,28 @@
 }
 .title {
   font-family: "Neue Montreal Bold";
+}
+
+@media (min-width: 768px) {
+  .productPage {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  .prodDetails {
+    height: 75%;
+    justify-content: center;
+    gap: 7vmax;
+    letter-spacing: 2px;
+  }
+  .imgContainer {
+    height: 75vh;
+  }
+  .namePrice,
+  .measurements {
+    flex-direction: column;
+    left: 5vmin;
+  }
+  .measure {
+    display: none;
+  }
 }

@@ -29,11 +29,11 @@ const ProductPage = () => {
         className={`${styles.productPage} ${menuClicked ? styles.bright : ""}`}
         onClick={() => setMenuClicked(false)}
       >
-        <section className={styles.imgContainer}>
+        <div className={styles.imgContainer}>
           <img src={product?.image} />
-        </section>
+        </div>
 
-        <section className={styles.prodDetails}>
+        <div className={styles.prodDetails}>
           <div className={styles.namePrice}>
             <div>{product?.id.name}</div>
             <div>{`£${product?.price}`}</div>
@@ -57,7 +57,7 @@ const ProductPage = () => {
             </div>
             <div>(cm)</div>
           </div>
-        </section>
+        </div>
       </div>
     </>
   );
