@@ -1,23 +1,29 @@
-import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import styles from "./navmenu.module.css";
 import NavbarTitle from "../NavbarTitle/NavbarTitle";
+import { navLink, navLinks } from "./anims";
 
 const ProductNavMenu = () => {
   return (
     <>
       <div className={styles.navMenu}>
         <NavbarTitle />
-        <div className={styles.navLinks}>
-          <Link className={styles.link} to="/">
+        <motion.div
+          variants={navLinks}
+          initial="initial"
+          animate="enter"
+          className={styles.navLinks}
+        >
+          <motion.a variants={navLink} className={styles.link} href="/">
             home
-          </Link>
-          <Link className={styles.link} to="/products">
+          </motion.a>
+          <motion.a variants={navLink} className={styles.link} href="/products">
             shop
-          </Link>
-          <Link className={styles.link} to="/about">
+          </motion.a>
+          <motion.a variants={navLink} className={styles.link} href="/about">
             about
-          </Link>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
     </>
   );
