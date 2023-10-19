@@ -27,6 +27,7 @@
   height: 40vh;
   line-height: 25px;
   font-family: "Neue Montreal Book";
+  transition: all 200ms var(--ease-in-out-quart);
 }
 .namePrice,
 .measurements {
@@ -74,5 +75,18 @@
   }
   .measure {
     display: none;
+  }
+}
+@media (max-height: 610px) {
+  .prodDetails {
+    font-size: 0.6rem;
+    line-height: 15px;
+  }
+  .measurements {
+    gap: 0px;
+    line-height: 15px;
+  }
+  .imgContainer > img {
+    object-position: 0% 70%;
   }
 }
