@@ -46,16 +46,15 @@ const ProductPage = () => {
           <div className={styles.measurements}>
             <div>
               <span className={styles.title}>width:</span>{" "}
-              {product?.measurement.width}
+              {`${product?.measurement.width} cm`}
             </div>
 
             <span className={styles.measure}>X</span>
 
             <div>
               <span className={styles.title}>height:</span>{" "}
-              {product?.measurement.height}
+              {`${product?.measurement.height} cm`}
             </div>
-            <div>(cm)</div>
           </div>
         </div>
       </div>

@@ -60,8 +60,9 @@
   .prodDetails {
     height: 75%;
     justify-content: center;
-    gap: 7vmax;
+    gap: 2.5vmin;
     letter-spacing: 2px;
+    font-size: 0.9rem;
   }
   .imgContainer {
     height: 75vh;
