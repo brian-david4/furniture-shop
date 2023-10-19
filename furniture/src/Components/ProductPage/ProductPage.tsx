@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ProductMenu from "../ProductMenu/ProductMenu";
 import { products } from "../../Data/data";
 import styles from "./ProductPage.module.css";
+import ProdNavbar from "../ProdNavbar/ProdNavbar";
 
 const ProductPage = () => {
   const { productName } = useParams();
@@ -21,6 +22,7 @@ const ProductPage = () => {
 
   return (
     <>
+      <ProdNavbar />
       <ProductMenu
         clicked={menuClicked}
         setClicked={() => setMenuClicked(!menuClicked)}

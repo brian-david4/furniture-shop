@@ -55,8 +55,11 @@
 
 @media (min-width: 768px) {
   .productPage {
+    position: relative;
+    top: var(--prod-navbar-hgt);
     display: grid;
     grid-template-columns: 2fr 1fr;
+    height: 90vh;
   }
   .prodDetails {
     height: 75%;
