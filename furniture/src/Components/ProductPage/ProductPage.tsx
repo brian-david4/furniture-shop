@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 import ProductMenu from "../ProductMenu/ProductMenu";
 import { products } from "../../Data/data";
 import styles from "./ProductPage.module.css";
-import ProdNavbar from "../ProdNavbar/ProdNavbar";
+import MainNavBar from "../MainNavBar/MainNavBar";
 
 const ProductPage = () => {
   const { productName } = useParams();
+  const [isDesktop, setDesktop] = useState(true);
   const [menuClicked, setMenuClicked] = useState(false);
 
   const product = products.find((prod) => prod.id.slug === productName);
@@ -20,9 +21,21 @@ const ProductPage = () => {
     };
   }, []);
 
+  useEffect(() => {
+    window.innerWidth >= 768 ? setDesktop(true) : setDesktop(false);
+    window.addEventListener("resize", () => {
+      window.innerWidth >= 768 ? setDesktop(true) : setDesktop(false);
+    });
+    return () => {
+      window.removeEventListener("resize", () => {
+        setDesktop(false);
+      });
+    };
+  }, []);
+
   return (
     <>
-      <ProdNavbar />
+      {isDesktop && <MainNavBar />}
       <ProductMenu
         clicked={menuClicked}
         setClicked={() => setMenuClicked(!menuClicked)}
