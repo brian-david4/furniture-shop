@@ -5,6 +5,7 @@ import { products } from "../../Data/data";
 import styles from "./ProductPage.module.css";
 import MainNavBar from "../MainNavBar/MainNavBar";
 import ProdDetails from "../ProdDetails/ProdDetails";
+import ProductImage from "../ProductImage/ProductImage";
 
 const ProductPage = () => {
   const { productName } = useParams();
@@ -45,9 +46,7 @@ const ProductPage = () => {
         className={`${styles.productPage} ${menuClicked ? styles.bright : ""}`}
         onClick={() => setMenuClicked(false)}
       >
-        <div className={styles.imgContainer}>
-          <img src={product?.image} />
-        </div>
+        <ProductImage src={product?.image} />
 
         <ProdDetails product={product} />
       </div>

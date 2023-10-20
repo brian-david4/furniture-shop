@@ -12,46 +12,6 @@
 .bright {
   filter: brightness(0.5) !important;
 }
-.imgContainer {
-  height: 50vh;
-  width: 100%;
-}
-.imgContainer > img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-.prodDetails {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  background-color: antiquewhite;
-  height: 40vh;
-  line-height: 25px;
-  font-family: "Neue Montreal Book";
-  transition: all 200ms var(--ease-in-out-quart);
-}
-.namePrice,
-.measurements {
-  position: relative;
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-}
-.description {
-  padding-left: 5vmin;
-  padding-right: 5vmin;
-}
-.measurements {
-  position: relative;
-  left: 5vmin;
-  justify-content: flex-start;
-  gap: 10px;
-}
-.measure {
-  font-family: "Gambarino";
-}
 
 @media (min-width: 768px) {
   .productPage {
@@ -70,10 +30,6 @@
     gap: 2.5vmin;
     letter-spacing: 2px;
     font-size: 0.9rem;
-  }
-  .imgContainer {
-    height: 100%;
-    width: var(--two-third-width);
   }
 }
 @media (max-height: 610px) {

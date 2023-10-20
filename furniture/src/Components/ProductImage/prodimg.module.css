@@ -1,0 +1,16 @@
+.imgContainer {
+  height: 50vh;
+  width: 100%;
+}
+.imgContainer > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+@media (min-width: 768px) {
+  .imgContainer {
+    height: 100%;
+    width: var(--two-third-width);
+  }
+}
