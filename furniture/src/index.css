@@ -3,6 +3,8 @@
   --header-height: 8vh;
   --prod-navbar-hgt: 10vh;
   --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --two-third-width: 65vw;
+  --one-third-width: 35vw;
 }
 
 @font-face {
