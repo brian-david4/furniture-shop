@@ -4,6 +4,7 @@ import ProductMenu from "../ProductMenu/ProductMenu";
 import { products } from "../../Data/data";
 import styles from "./ProductPage.module.css";
 import MainNavBar from "../MainNavBar/MainNavBar";
+import ProdDetails from "../ProdDetails/ProdDetails";
 
 const ProductPage = () => {
   const { productName } = useParams();
@@ -48,30 +49,7 @@ const ProductPage = () => {
           <img src={product?.image} />
         </div>
 
-        <div className={styles.prodDetails}>
-          <div className={styles.namePrice}>
-            <div>{product?.id.name}</div>
-            <div>{`£${product?.price}`}</div>
-          </div>
-
-          <div className={styles.description}>
-            <div className={styles.desc}>{product?.description}</div>
-          </div>
-
-          <div className={styles.measurements}>
-            <div>
-              <span className={styles.title}>width:</span>{" "}
-              {`${product?.measurement.width} cm`}
-            </div>
-
-            <span className={styles.measure}>X</span>
-
-            <div>
-              <span className={styles.title}>height:</span>{" "}
-              {`${product?.measurement.height} cm`}
-            </div>
-          </div>
-        </div>
+        <ProdDetails product={product} />
       </div>
     </>
   );

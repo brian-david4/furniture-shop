@@ -1,27 +1,3 @@
-.productPage {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: aqua;
-  transition: filter 250ms var(--ease-in-out-quart);
-}
-.bright {
-  filter: brightness(0.5) !important;
-}
-.imgContainer {
-  height: 50vh;
-  width: 100%;
-}
-.imgContainer > img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-}
 .prodDetails {
   display: flex;
   flex-direction: column;
@@ -52,31 +28,36 @@
 .measure {
   font-family: "Gambarino";
 }
-
+.title {
+  font-family: "Neue Montreal Bold";
+}
 @media (min-width: 768px) {
-  .productPage {
-    top: var(--header-height);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 0px;
-    height: 92vh;
-    width: 100vw;
-  }
   .prodDetails {
     height: 95%;
     width: var(--one-third-width);
     justify-content: center;
     gap: 2.5vmin;
     letter-spacing: 2px;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
-  .imgContainer {
-    height: 100%;
-    width: var(--two-third-width);
+  .namePrice,
+  .measurements {
+    flex-direction: column;
+    left: 5vmin;
+  }
+  .measure {
+    display: none;
   }
 }
 @media (max-height: 610px) {
+  .prodDetails {
+    font-size: 0.6rem;
+    line-height: 15px;
+  }
+  .measurements {
+    gap: 0px;
+    line-height: 15px;
+  }
   .imgContainer > img {
     object-position: 0% 70%;
   }
