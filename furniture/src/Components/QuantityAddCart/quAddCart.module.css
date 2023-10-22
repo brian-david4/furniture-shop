@@ -1,0 +1,19 @@
+.cartAddContainer {
+  height: 10vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: brown;
+}
+.quantityWrapper {
+  background-color: cadetblue;
+}
+.buttonWrapper {
+  background-color: burlywood;
+}
+
+@media (min-width: 768px) {
+  .cartAddContainer {
+    height: 5%;
+  }
+}
