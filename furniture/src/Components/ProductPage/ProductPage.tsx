@@ -53,7 +53,7 @@ const ProductPage = () => {
 
         <div className={styles.prodDetailsLayout}>
           <ProdDetails product={product} />
-          <QuantityAddCart />
+          <QuantityAddCart addToCart={(quantity) => console.log(quantity)} />
         </div>
       </div>
     </>
