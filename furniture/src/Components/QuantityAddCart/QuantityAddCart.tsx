@@ -3,10 +3,12 @@ import styles from "./quAddCart.module.css";
 
 interface QuantityAddCartProps {
   addToCart: (quantity: number) => void;
+  stock: number | undefined;
 }
 
-const QuantityAddCart = ({ addToCart }: QuantityAddCartProps) => {
+const QuantityAddCart = ({ addToCart, stock }: QuantityAddCartProps) => {
   const [quantity, setQuantity] = useState(1);
+  const stockQuantity: number = typeof stock === "number" ? stock : 0;
 
   return (
     <div className={styles.cartAddContainer}>
@@ -21,6 +23,7 @@ const QuantityAddCart = ({ addToCart }: QuantityAddCartProps) => {
         </button>
         <div className={styles.quantity}>{quantity}</div>
         <button
+          disabled={quantity >= stockQuantity ? true : false}
           className={styles.incrementBtn}
           onClick={() => setQuantity(quantity + 1)}
         >

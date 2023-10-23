@@ -49,11 +49,13 @@ const ProductPage = () => {
         onClick={() => setMenuClicked(false)}
       >
         <ProductImage src={product?.image} />
-        {/* <div className={styles.divTwo}></div> */}
 
         <div className={styles.prodDetailsLayout}>
           <ProdDetails product={product} />
-          <QuantityAddCart addToCart={(quantity) => console.log(quantity)} />
+          <QuantityAddCart
+            stock={product?.stock}
+            addToCart={(quantity) => console.log(quantity)}
+          />
         </div>
       </div>
     </>

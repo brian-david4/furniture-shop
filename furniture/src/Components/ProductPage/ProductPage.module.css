@@ -13,11 +13,6 @@
 .bright {
   filter: brightness(0.5) !important;
 }
-.divTwo {
-  height: 50%;
-  width: 100%;
-  background-color: cadetblue;
-}
 .prodDetailsLayout {
   height: 50%;
   width: 100%;
