@@ -4,4 +4,5 @@ export interface Product {
   image: string;
   price: number;
   measurement: { width: number; height: number };
+  stock: number;
 }

@@ -14,6 +14,7 @@ export const products: Product[] = [
     price: 1200,
     measurement: { width: 70, height: 46 },
     image: alum_otto,
+    stock: 3,
   },
   {
     id: { name: "COFFEE TABLE", slug: "coffee-table" },
@@ -22,6 +23,7 @@ export const products: Product[] = [
     price: 1000,
     measurement: { width: 60, height: 30 },
     image: coffee_table,
+    stock: 8,
   },
   {
     id: { name: "DINING TABLE", slug: "dining-table" },
@@ -30,6 +32,7 @@ export const products: Product[] = [
     price: 3200,
     measurement: { width: 80, height: 74 },
     image: dining_table,
+    stock: 4,
   },
   {
     id: { name: "LOUNGE CHAIR", slug: "lounge-chair" },
@@ -38,6 +41,7 @@ export const products: Product[] = [
     price: 1800,
     measurement: { width: 52, height: 90 },
     image: lounge_chair,
+    stock: 2,
   },
   {
     id: { name: "ROCKING CHAIR", slug: "rocking-chair" },
@@ -46,6 +50,7 @@ export const products: Product[] = [
     price: 1500,
     measurement: { width: 60, height: 85 },
     image: rocking_chair,
+    stock: 5,
   },
   {
     id: { name: "SIDE TABLE", slug: "side-table" },
@@ -54,5 +59,6 @@ export const products: Product[] = [
     price: 950,
     measurement: { width: 40, height: 40 },
     image: side_table,
+    stock: 12,
   },
 ];
