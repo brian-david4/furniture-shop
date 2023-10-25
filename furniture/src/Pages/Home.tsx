@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Img } from "react-image";
 import { AnimatePresence, motion } from "framer-motion";
 import HomeFurniture from "../Components/HomeFurniture/HomeFurniture";
@@ -30,6 +30,13 @@ const Home = () => {
   };
   const { x, y } = useMousePosition();
   const size = isHovered ? 350 : 75;
+
+  useEffect(() => {
+    document.body.style.position = "fixed";
+    return () => {
+      document.body.style.position = "static";
+    };
+  });
 
   return (
     <>

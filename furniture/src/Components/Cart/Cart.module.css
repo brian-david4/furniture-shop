@@ -1,0 +1,14 @@
+.cartTitle {
+  color: black;
+  font-family: "Vietnam Medium";
+  width: fit-content;
+  padding-right: 1vmin;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .cartTitle {
+    font-family: "Vietnam Light";
+  }
+}
