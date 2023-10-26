@@ -27,6 +27,22 @@ export const CartProvider = ({ children }: CartContextProps) => {
     return quantity;
   };
 
+  const addToCart = (id: number, quantity: number) => {
+    const prodQuantity = getProductQuantity(id);
+
+    if (prodQuantity === 0) {
+      setCartProducts([...cartProducts, { id: id, quantity: quantity }]);
+    } else {
+      setCartProducts(
+        cartProducts.map((product) =>
+          product.id === id
+            ? { ...product, quantity: product.quantity + quantity }
+            : product
+        )
+      );
+    }
+  };
+
   const contextValue = {
     getProductQuantity,
     addToCart,
