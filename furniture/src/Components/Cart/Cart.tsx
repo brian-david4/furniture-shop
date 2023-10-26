@@ -13,7 +13,7 @@ const Cart = () => {
       >
         cart(0)
       </div>
-      {isCartOpen && <CartMenu />}
+      {isCartOpen && <CartMenu closeMenu={() => setCartOpen(false)} />}
     </>
   );
 };

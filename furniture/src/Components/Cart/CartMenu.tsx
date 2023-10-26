@@ -1,9 +1,14 @@
+import CartHeader from "../CartHeader/CartHeader";
 import styles from "./Cart.module.css";
 
-const CartMenu = () => {
+interface CartMenuProps {
+  closeMenu: () => void;
+}
+
+const CartMenu = ({ closeMenu }: CartMenuProps) => {
   return (
     <div className={styles.cartMenu}>
-      <h1>cart menu</h1>
+      <CartHeader closeMenu={() => closeMenu()} />
     </div>
   );
 };
