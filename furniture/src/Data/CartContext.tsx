@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import { CartItem } from "./CartItem";
-import { products } from "./data";
+import { getProductData } from "./getProductData";
 
 export const CartContext = createContext({
   getProductQuantity: () => {},
@@ -42,6 +42,20 @@ export const CartProvider = ({ children }: CartContextProps) => {
         )
       );
     }
+  };
+
+  const getTotalCost = () => {
+    let totalCost = 0;
+    cartProducts.map((cartItem) => {
+      const productData = getProductData(cartItem.id);
+
+      if (productData === undefined) {
+        return (totalCost += 0);
+      } else {
+        return (totalCost += productData.price * cartItem.quantity);
+      }
+    });
+    return totalCost;
   };
 
   const removeOneFromCart = (id: number) => {
