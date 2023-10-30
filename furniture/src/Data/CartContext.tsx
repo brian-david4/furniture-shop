@@ -3,11 +3,12 @@ import { CartItem } from "./CartItem";
 import { getProductData } from "./getProductData";
 
 export const CartContext = createContext({
-  getProductQuantity: () => {},
-  addToCart: () => {},
-  removeOneFromCart: () => {},
-  deleteFromCart: () => {},
-  getTotalCost: () => {},
+  items: [] as CartItem[],
+  getProductQuantity: (id: number) => {},
+  addToCart: (id: number, quantity: number) => {},
+  removeOneFromCart: (id: number) => {},
+  deleteFromCart: (id: number) => {},
+  getTotalCost: (id: number) => {},
 });
 
 // CartProvider
@@ -15,7 +16,7 @@ interface CartContextProps {
   children: React.ReactNode;
 }
 
-export const CartProvider = ({ children }: CartContextProps) => {
+const CartProvider = ({ children }: CartContextProps) => {
   const [cartProducts, setCartProducts] = useState<CartItem[]>([]);
 
   const getProductQuantity = (id: number) => {
@@ -23,7 +24,9 @@ export const CartProvider = ({ children }: CartContextProps) => {
       (product) => product.id === id
     )?.quantity;
 
-    if (quantity === undefined) return 0;
+    if (quantity === undefined) {
+      return 0;
+    }
 
     return quantity;
   };
@@ -82,6 +85,7 @@ export const CartProvider = ({ children }: CartContextProps) => {
   };
 
   const contextValue = {
+    items: cartProducts,
     getProductQuantity,
     addToCart,
     removeOneFromCart,
@@ -93,3 +97,5 @@ export const CartProvider = ({ children }: CartContextProps) => {
     <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
   );
 };
+
+export default CartProvider;
