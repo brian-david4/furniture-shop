@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import styles from "./quAddCart.module.css";
+import { CartContext } from "../../Data/CartContext";
 
 interface QuantityAddCartProps {
-  addToCart: (quantity: number) => void;
+  id: number | undefined;
   stock: number | undefined;
 }
 
-const QuantityAddCart = ({ addToCart, stock }: QuantityAddCartProps) => {
+const QuantityAddCart = ({ id, stock }: QuantityAddCartProps) => {
   const [quantity, setQuantity] = useState(1);
+  const cart = useContext(CartContext);
+
   const stockQuantity: number = typeof stock === "number" ? stock : 0;
+  const idNum: number = typeof id === "number" ? id : 0;
+
+  useEffect(() => {
+    console.log(cart);
+  }, []);
 
   return (
     <div className={styles.cartAddContainer}>
@@ -31,7 +39,10 @@ const QuantityAddCart = ({ addToCart, stock }: QuantityAddCartProps) => {
         </button>
       </div>
       <div className={styles.buttonWrapper}>
-        <button onClick={() => addToCart(quantity)} className={styles.addCart}>
+        <button
+          onClick={() => cart.addToCart(idNum, quantity)}
+          className={styles.addCart}
+        >
           add to cart
         </button>
       </div>
