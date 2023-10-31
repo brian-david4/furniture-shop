@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import styles from "./quAddCart.module.css";
 import { CartContext } from "../../Data/CartContext";
 
@@ -13,10 +13,6 @@ const QuantityAddCart = ({ id, stock }: QuantityAddCartProps) => {
 
   const stockQuantity: number = typeof stock === "number" ? stock : 0;
   const idNum: number = typeof id === "number" ? id : 0;
-
-  useEffect(() => {
-    console.log(cart);
-  }, []);
 
   return (
     <div className={styles.cartAddContainer}>

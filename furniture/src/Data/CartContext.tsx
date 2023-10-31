@@ -2,14 +2,17 @@ import { createContext, useState } from "react";
 import { CartItem } from "./CartItem";
 import { getProductData } from "./getProductData";
 
-export const CartContext = createContext({
-  items: [] as CartItem[],
-  getProductQuantity: (id: number) => {},
-  addToCart: (id: number, quantity: number) => {},
-  removeOneFromCart: (id: number) => {},
-  deleteFromCart: (id: number) => {},
-  getTotalCost: (id: number) => {},
-});
+type CartContextType = {
+  items: CartItem[];
+  getProductQuantity: (id: number) => number;
+  addToCart: (id: number, quantity: number) => void;
+  removeOneFromCart: (id: number) => void;
+  deleteFromCart: (id: number) => void;
+  getTotalCost: () => number;
+  getTotalCartQuantity: () => number;
+};
+
+export const CartContext = createContext({} as CartContextType);
 
 // CartProvider
 interface CartContextProps {
@@ -28,6 +31,14 @@ const CartProvider = ({ children }: CartContextProps) => {
       return 0;
     }
 
+    return quantity;
+  };
+
+  const getTotalCartQuantity = () => {
+    let quantity = 0;
+    cartProducts.forEach((cartItem) => {
+      quantity += getProductQuantity(cartItem.id);
+    });
     return quantity;
   };
 
@@ -91,6 +102,7 @@ const CartProvider = ({ children }: CartContextProps) => {
     removeOneFromCart,
     deleteFromCart,
     getTotalCost,
+    getTotalCartQuantity,
   };
 
   return (
