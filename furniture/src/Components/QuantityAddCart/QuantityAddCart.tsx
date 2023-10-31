@@ -36,7 +36,7 @@ const QuantityAddCart = ({ id, stock }: QuantityAddCartProps) => {
       </div>
       <div className={styles.buttonWrapper}>
         <button
-          onClick={() => cart.addToCart(idNum, quantity)}
+          onClick={() => cart.addToCart(idNum, quantity, stockQuantity)}
           className={styles.addCart}
         >
           add to cart

@@ -5,7 +5,7 @@ import { getProductData } from "./getProductData";
 type CartContextType = {
   items: CartItem[];
   getProductQuantity: (id: number) => number;
-  addToCart: (id: number, quantity: number) => void;
+  addToCart: (id: number, quantity: number, stock: number) => void;
   removeOneFromCart: (id: number) => void;
   deleteFromCart: (id: number) => void;
   getTotalCost: () => number;
@@ -42,9 +42,12 @@ const CartProvider = ({ children }: CartContextProps) => {
     return quantity;
   };
 
-  const addToCart = (id: number, quantity: number) => {
+  const addToCart = (id: number, quantity: number, stock: number) => {
     const prodQuantity = getProductQuantity(id);
 
+    if (quantity + prodQuantity > stock) {
+      quantity = stock - prodQuantity;
+    }
     if (prodQuantity === 0) {
       setCartProducts([...cartProducts, { id: id, quantity: quantity }]);
     } else {
