@@ -17,6 +17,9 @@
   background-color: gainsboro;
   border-radius: var(--border-rad);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 @media (min-width: 768px) {
