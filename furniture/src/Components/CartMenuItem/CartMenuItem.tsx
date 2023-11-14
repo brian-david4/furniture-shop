@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import styles from "./CartmenuItem.module.css";
 import { products } from "../../Data/data";
+import { CartContext } from "../../Data/CartContext";
 
 interface CartMenuItemProps {
   id: number;
@@ -8,6 +10,7 @@ interface CartMenuItemProps {
 
 const CartMenuItem = ({ id, quantity }: CartMenuItemProps) => {
   const product = products.find((prod) => prod.id.id === id);
+  const cart = useContext(CartContext);
 
   return (
     <>
@@ -15,6 +18,12 @@ const CartMenuItem = ({ id, quantity }: CartMenuItemProps) => {
         {product === undefined && <></>}
         <h2>{product?.id.name}</h2>
         <h3>{quantity} in cart</h3>
+        <button
+          className={styles.deleteBtn}
+          onClick={() => cart.deleteFromCart(id)}
+        >
+          delete
+        </button>
       </div>
     </>
   );
