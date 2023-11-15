@@ -11,6 +11,24 @@
 .cartFont {
   font-family: "Neue Montreal Book";
 }
+.quantityWrapper {
+  display: flex;
+  gap: 2px;
+}
+.quantityWrapper > button {
+  border: none;
+  background-color: var(--cart-pink);
+  border-radius: 5px;
+  font-family: "Neue Montreal Book";
+  transition: background-color 250ms var(--ease-in-out-quart);
+}
+.quantityWrapper > button:hover {
+  background-color: var(--cart-dark-red);
+  color: aliceblue;
+}
+.quantityWrapper > button:disabled:hover {
+  background-color: var(--cart-btn-disabled);
+}
 .deleteBtn {
   border-radius: 5px;
   height: 80%;

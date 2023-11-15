@@ -11,13 +11,31 @@ interface CartMenuItemProps {
 const CartMenuItem = ({ id, quantity }: CartMenuItemProps) => {
   const product = products.find((prod) => prod.id.id === id);
   const cart = useContext(CartContext);
+  const stock = product === undefined ? 0 : product.stock;
+  const currentQuantity = cart.getProductQuantity(id);
 
   return (
     <>
       <div className={styles.itemContainer}>
         {product === undefined && <></>}
         <h2 className={styles.cartFont}>{product?.id.name}</h2>
-        <h3 className={styles.cartFont}>{quantity} in cart</h3>
+
+        <div className={styles.quantityWrapper}>
+          <button
+            disabled={currentQuantity <= 1 ? true : false}
+            onClick={() => cart.removeOneFromCart(id)}
+          >
+            -
+          </button>
+          <h3 className={styles.cartFont}>{quantity} in cart</h3>
+          <button
+            disabled={currentQuantity >= stock ? true : false}
+            onClick={() => cart.addToCart(id, 1, stock)}
+          >
+            +
+          </button>
+        </div>
+
         <button
           className={styles.deleteBtn}
           onClick={() => cart.deleteFromCart(id)}

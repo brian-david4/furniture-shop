@@ -5,6 +5,7 @@
   --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
   --cart-dark-red: rgb(73, 5, 5);
   --cart-pink: rgb(255, 202, 202);
+  --cart-btn-disabled: rgb(88, 72, 72);
   --two-third-width: 65vw;
   --one-third-width: 35vw;
   --border-rad: 20px;
