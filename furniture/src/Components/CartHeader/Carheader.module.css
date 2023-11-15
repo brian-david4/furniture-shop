@@ -4,11 +4,13 @@
   height: 15vh;
   top: 0;
   left: 0;
-  background-color: brown;
+  background-color: var(--cart-dark-red);
   display: flex;
   justify-content: space-around;
   align-items: center;
   user-select: none;
+  border-bottom: 2px solid black;
+  color: aliceblue;
 }
 .cartTitle {
   font-family: "Gambarino";
@@ -23,4 +25,5 @@
   cursor: pointer;
   border: none;
   background-color: rgba(0, 0, 0, 0);
+  color: aliceblue;
 }

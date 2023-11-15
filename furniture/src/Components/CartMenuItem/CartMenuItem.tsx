@@ -16,8 +16,8 @@ const CartMenuItem = ({ id, quantity }: CartMenuItemProps) => {
     <>
       <div className={styles.itemContainer}>
         {product === undefined && <></>}
-        <h2>{product?.id.name}</h2>
-        <h3>{quantity} in cart</h3>
+        <h2 className={styles.cartFont}>{product?.id.name}</h2>
+        <h3 className={styles.cartFont}>{quantity} in cart</h3>
         <button
           className={styles.deleteBtn}
           onClick={() => cart.deleteFromCart(id)}
