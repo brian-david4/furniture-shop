@@ -13,12 +13,19 @@ const CartMenuItem = ({ id, quantity }: CartMenuItemProps) => {
   const cart = useContext(CartContext);
   const stock = product === undefined ? 0 : product.stock;
   const currentQuantity = cart.getProductQuantity(id);
+  const src = product === undefined ? "" : product.image;
 
   return (
     <>
       <div className={styles.itemContainer}>
         {product === undefined && <></>}
-        <h2 className={styles.cartFont}>{product?.id.name}</h2>
+
+        <div className={styles.prodInfo}>
+          <div className={styles.cartImageWrapper}>
+            <img className={styles.cartImage} src={src} alt="product image" />
+          </div>
+          <h2 className={styles.cartFont}>{product?.id.name}</h2>
+        </div>
 
         <div className={styles.quantityWrapper}>
           <button
