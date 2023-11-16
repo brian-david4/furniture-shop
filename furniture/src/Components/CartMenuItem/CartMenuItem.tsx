@@ -1,7 +1,9 @@
 import { useContext } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import styles from "./CartmenuItem.module.css";
 import { products } from "../../Data/data";
 import { CartContext } from "../../Data/CartContext";
+import { cartItemAnim } from "./CartAnim";
 
 interface CartMenuItemProps {
   id: number;
@@ -17,39 +19,38 @@ const CartMenuItem = ({ id, quantity }: CartMenuItemProps) => {
 
   return (
     <>
-      <div className={styles.itemContainer}>
-        {product === undefined && <></>}
-
-        <div className={styles.prodInfo}>
-          <div className={styles.cartImageWrapper}>
-            <img className={styles.cartImage} src={src} alt="product image" />
+      <AnimatePresence mode="wait">
+        <motion.div variants={cartItemAnim} className={styles.itemContainer}>
+          {product === undefined && <></>}
+          <div className={styles.prodInfo}>
+            <div className={styles.cartImageWrapper}>
+              <img className={styles.cartImage} src={src} alt="product image" />
+            </div>
+            <h2 className={styles.cartFont}>{product?.id.name}</h2>
           </div>
-          <h2 className={styles.cartFont}>{product?.id.name}</h2>
-        </div>
-
-        <div className={styles.quantityWrapper}>
+          <div className={styles.quantityWrapper}>
+            <button
+              disabled={currentQuantity <= 1 ? true : false}
+              onClick={() => cart.removeOneFromCart(id)}
+            >
+              -
+            </button>
+            <h3 className={styles.cartFont}>{quantity} in cart</h3>
+            <button
+              disabled={currentQuantity >= stock ? true : false}
+              onClick={() => cart.addToCart(id, 1, stock)}
+            >
+              +
+            </button>
+          </div>
           <button
-            disabled={currentQuantity <= 1 ? true : false}
-            onClick={() => cart.removeOneFromCart(id)}
+            className={styles.deleteBtn}
+            onClick={() => cart.deleteFromCart(id)}
           >
-            -
+            delete
           </button>
-          <h3 className={styles.cartFont}>{quantity} in cart</h3>
-          <button
-            disabled={currentQuantity >= stock ? true : false}
-            onClick={() => cart.addToCart(id, 1, stock)}
-          >
-            +
-          </button>
-        </div>
-
-        <button
-          className={styles.deleteBtn}
-          onClick={() => cart.deleteFromCart(id)}
-        >
-          delete
-        </button>
-      </div>
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 };
