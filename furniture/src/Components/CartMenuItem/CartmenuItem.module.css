@@ -19,9 +19,11 @@
   place-items: center;
   font-family: "Neue Montreal Book";
   text-transform: capitalize;
+  white-space: nowrap;
 }
 .cartImageWrapper {
   height: 80px;
+  width: 140px;
 }
 .cartImage {
   height: 100%;
