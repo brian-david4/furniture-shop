@@ -14,7 +14,7 @@
   left: 2.5vw;
   height: 70vh;
   width: 95vw;
-  background-color: gainsboro;
+  background-color: rgb(186, 159, 159);
   border-radius: var(--border-rad);
   overflow: hidden;
   display: flex;

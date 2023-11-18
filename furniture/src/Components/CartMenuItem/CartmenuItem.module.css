@@ -7,6 +7,7 @@
   place-items: center;
   border-bottom: 1px solid black;
   font-family: "Vietnam Pro Light";
+  user-select: none;
 }
 .prodInfo {
   height: 100%;
