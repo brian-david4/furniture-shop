@@ -4,6 +4,7 @@ import CartMenuItem from "../CartMenuItem/CartMenuItem";
 import styles from "./Cart.module.css";
 import CartItems from "./CartItems/CartItems";
 import { CartContext } from "../../Data/CartContext";
+import CartFooter from "../CartFooter/CartFooter";
 
 interface CartMenuProps {
   closeMenu: () => void;
@@ -25,6 +26,7 @@ const CartMenu = ({ closeMenu }: CartMenuProps) => {
             />
           ))}
         </CartItems>
+        <CartFooter />
       </div>
     </div>
   );

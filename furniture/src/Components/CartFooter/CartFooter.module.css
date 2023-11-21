@@ -1,0 +1,61 @@
+.cartFooter {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(6, 22, 46);
+  color: aliceblue;
+}
+.grandTotal {
+  font-family: "Gambarino";
+  display: flex;
+  gap: 8vmin;
+  font-size: 1.5rem;
+}
+.total {
+  position: relative;
+  top: 8px;
+  font-family: "Vietnam Bold";
+  font-size: 1rem;
+}
+.checkoutContainer {
+  display: grid;
+  place-items: center;
+  width: 30%;
+  height: 100%;
+  background-color: aquamarine;
+  overflow: hidden;
+}
+.toCartBtn {
+  height: 80px;
+  width: 100%;
+  cursor: pointer;
+  background-color: aliceblue;
+  font-family: "Vietnam Light";
+  display: grid;
+  place-items: center;
+  transition: transform 150ms ease-in-out, color 150ms ease-in-out;
+}
+.checkoutContainer:hover > .toCartBtn {
+  transform: translateY(-100%);
+}
+.checkoutContainer:hover > .backSlide {
+  transform: translateY(-100%);
+}
+.checkoutContainer:hover > .link {
+  color: aliceblue;
+}
+.backSlide {
+  height: 80px;
+  width: 100%;
+  background-color: var(--cart-dark-red);
+  transition: transform 150ms ease-in-out;
+}
+.link {
+  position: absolute;
+  text-decoration: none;
+  color: black;
+  z-index: 20;
+  font-family: "Neue Montreal Book";
+}
