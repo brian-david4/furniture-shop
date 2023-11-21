@@ -20,7 +20,7 @@
 .cartMenu {
   height: 70vh;
   width: 95vw;
-  max-width: 740px;
+  max-width: 850px;
   background-color: rgb(186, 159, 159);
   border-radius: var(--border-rad);
   overflow: hidden;

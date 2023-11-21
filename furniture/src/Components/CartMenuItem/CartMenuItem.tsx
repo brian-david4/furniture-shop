@@ -16,6 +16,7 @@ const CartMenuItem = ({ id, quantity }: CartMenuItemProps) => {
   const stock = product === undefined ? 0 : product.stock;
   const currentQuantity = cart.getProductQuantity(id);
   const src = product === undefined ? "" : product.image;
+  const price = product === undefined ? 0 : product.price * currentQuantity;
 
   return (
     <>
@@ -28,21 +29,27 @@ const CartMenuItem = ({ id, quantity }: CartMenuItemProps) => {
             </div>
             <h4 className={styles.cartFont}>{product?.id.name}</h4>
           </div>
-          <div className={styles.quantityWrapper}>
-            <button
-              disabled={currentQuantity <= 1 ? true : false}
-              onClick={() => cart.removeOneFromCart(id)}
-            >
-              -
-            </button>
-            <div className={styles.cartFont}>{quantity} in cart</div>
-            <button
-              disabled={currentQuantity >= stock ? true : false}
-              onClick={() => cart.addToCart(id, 1, stock)}
-            >
-              +
-            </button>
+
+          <div className={styles.quantityTotal}>
+            <div className={styles.quantityWrapper}>
+              <button
+                disabled={currentQuantity <= 1 ? true : false}
+                onClick={() => cart.removeOneFromCart(id)}
+              >
+                -
+              </button>
+              <div className={styles.cartFont}>{quantity} in cart</div>
+              <button
+                disabled={currentQuantity >= stock ? true : false}
+                onClick={() => cart.addToCart(id, 1, stock)}
+              >
+                +
+              </button>
+            </div>
+
+            <div className={styles.total}>£{price}</div>
           </div>
+
           <button
             className={styles.deleteBtn}
             onClick={() => cart.deleteFromCart(id)}
