@@ -26,7 +26,7 @@ const CartMenuItem = ({ id, quantity }: CartMenuItemProps) => {
             <div className={styles.cartImageWrapper}>
               <img className={styles.cartImage} src={src} alt="product image" />
             </div>
-            <h2 className={styles.cartFont}>{product?.id.name}</h2>
+            <h4 className={styles.cartFont}>{product?.id.name}</h4>
           </div>
           <div className={styles.quantityWrapper}>
             <button
@@ -35,7 +35,7 @@ const CartMenuItem = ({ id, quantity }: CartMenuItemProps) => {
             >
               -
             </button>
-            <h3 className={styles.cartFont}>{quantity} in cart</h3>
+            <div className={styles.cartFont}>{quantity} in cart</div>
             <button
               disabled={currentQuantity >= stock ? true : false}
               onClick={() => cart.addToCart(id, 1, stock)}

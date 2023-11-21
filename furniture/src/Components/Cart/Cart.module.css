@@ -8,12 +8,19 @@
 }
 
 /* cartMenu */
+.cartPlacement {
+  position: absolute;
+  left: 0;
+  top: 0%;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
 .cartMenu {
-  position: fixed;
-  top: 20%;
-  left: 2.5vw;
   height: 70vh;
   width: 95vw;
+  max-width: 740px;
   background-color: rgb(186, 159, 159);
   border-radius: var(--border-rad);
   overflow: hidden;

@@ -13,17 +13,19 @@ const CartMenu = ({ closeMenu }: CartMenuProps) => {
   const cart = useContext(CartContext);
 
   return (
-    <div className={styles.cartMenu}>
-      <CartHeader closeMenu={() => closeMenu()} />
-      <CartItems>
-        {cart.items.map((cartItem, idx) => (
-          <CartMenuItem
-            key={idx}
-            id={cartItem.id}
-            quantity={cartItem.quantity}
-          />
-        ))}
-      </CartItems>
+    <div className={styles.cartPlacement}>
+      <div className={styles.cartMenu}>
+        <CartHeader closeMenu={() => closeMenu()} />
+        <CartItems>
+          {cart.items.map((cartItem, idx) => (
+            <CartMenuItem
+              key={idx}
+              id={cartItem.id}
+              quantity={cartItem.quantity}
+            />
+          ))}
+        </CartItems>
+      </div>
     </div>
   );
 };
