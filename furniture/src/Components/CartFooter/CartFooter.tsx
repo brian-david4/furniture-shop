@@ -12,13 +12,13 @@ const CartFooter = () => {
         <div className={styles.totalTitle}>TOTAL</div>
         <div className={styles.total}>£{totalPrice}</div>
       </div>
-      <div className={styles.checkoutContainer}>
-        <div className={styles.toCartBtn}></div>
-        <Link className={styles.link} to="/checkout">
+      <Link className={styles.link} to="/checkout">
+        <div className={styles.checkoutContainer}>
+          <div className={styles.toCartBtn}>To Checkout</div>
           To Checkout
-        </Link>
-        <div className={styles.backSlide}></div>
-      </div>
+          <div className={styles.backSlide}>To Checkout</div>
+        </div>
+      </Link>
     </div>
   );
 };
