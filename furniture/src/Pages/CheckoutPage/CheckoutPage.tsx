@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../../Data/CartContext";
 import styles from "./Checkout.module.css";
 import BagItem from "../../Components/BagItem/BagItem";
+import { Link } from "react-router-dom";
 
 const CheckoutPage = () => {
   const cart = useContext(CartContext);
@@ -18,7 +19,30 @@ const CheckoutPage = () => {
               />
             ))}
           </div>
-          <div className={styles.summary}></div>
+          <div className={styles.summary}>
+            <h1 className={styles.summaryTitle}>Summary</h1>
+
+            <div className={styles.totalWrapper}>
+              <div className={styles.subtotal}>
+                <div className={styles.subtotalTitle}>subtotal</div>
+                <div className={styles.subtotalPrice}>£1000</div>
+              </div>
+              <div className={styles.delivery}>
+                <div>delivery</div>
+                <div className={styles.deliveryPrice}>£0.00</div>
+              </div>
+              <div className={styles.divider}></div>
+            </div>
+
+            <div className={styles.grandTotal}>
+              <div className={styles.grandTotalTitle}>TOTAL</div>
+              <div className={styles.grandTotalPrice}>£1000</div>
+            </div>
+
+            <Link className={styles.link} to="/checkout/shipping-address">
+              <button className={styles.checkoutButton}>Guest Checkout</button>
+            </Link>
+          </div>
         </div>
       </div>
     </>
