@@ -3,13 +3,29 @@
   left: 0;
   top: 0;
   width: 100vw;
+  display: flex;
+  justify-content: center;
   height: 100vh;
   background-color: blanchedalmond;
+  padding: 20vh 2.5vw 0 2.5vw;
+}
+.bagSummaryFlex {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5vw;
 }
 .bag {
-  height: 60vh;
-  width: 60vw;
+  height: fit-content;
+  width: 50vw;
   display: flex;
   flex-direction: column;
   background-color: brown;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.summary {
+  width: 30vw;
+  background-color: aliceblue;
+  height: 60vh;
+  border-radius: 5px;
 }
