@@ -13,8 +13,19 @@ const BagItem = ({ id, quantity }: BagItemProps) => {
   const product = products.find((prod) => id === prod.id.id);
   return (
     <div className={styles.bagItem}>
-      <h5>{product?.id.name}</h5>
-      <h5>quantity: {quantity}</h5>
+      <div className={styles.prodImgContainer}>
+        <img src={product?.image} alt="Product Image" />
+      </div>
+      <div className={styles.detailFlex}>
+        <h5>{product?.id.name}</h5>
+        <h5>Quantity: {quantity}</h5>
+        <div
+          onClick={() => cart.deleteFromCart(id)}
+          className={styles.removeCart}
+        >
+          remove from cart
+        </div>
+      </div>
     </div>
   );
 };
