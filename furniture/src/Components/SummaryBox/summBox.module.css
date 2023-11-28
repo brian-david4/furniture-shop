@@ -1,0 +1,74 @@
+.summary {
+  width: 35vw;
+  background-color: var(--cart-pink);
+  height: 60vh;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5vh;
+  align-items: center;
+  transition: width 150ms var(--ease-in-out-quart);
+}
+.summaryTitle {
+  font-family: "Hatton";
+  user-select: none;
+}
+.totalWrapper {
+  width: 90%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: black;
+}
+.subtotal,
+.delivery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: "Neue Montreal Book";
+}
+.subtotalPrice,
+.deliveryPrice,
+.grandTotalPrice {
+  width: 100%;
+  display: grid;
+  place-items: center end;
+}
+.grandTotal {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+.grandTotalTitle {
+  font-family: "Hatton";
+  font-size: 1.5rem;
+}
+.grandTotalPrice {
+  font-family: "Vietnam Light";
+}
+.link {
+  width: 80%;
+}
+.checkoutButton {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  color: aliceblue;
+  border: none;
+  background-color: var(--cart-dark-red);
+  font-family: "Vietnam Light";
+  transition: background-color 150ms ease-in-out;
+}
+.checkoutButton:hover {
+  background-color: var(--cart-btn-disabled);
+}
+
+@media (min-width: 768px) {
+  .summary {
+    width: 25vw;
+  }
+}
