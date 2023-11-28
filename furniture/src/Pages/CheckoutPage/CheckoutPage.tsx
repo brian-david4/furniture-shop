@@ -3,11 +3,13 @@ import { CartContext } from "../../Data/CartContext";
 import styles from "./Checkout.module.css";
 import BagItem from "../../Components/BagItem/BagItem";
 import { Link } from "react-router-dom";
+import CheckoutNavbar from "../../Components/CheckoutNavbar/CheckoutNavbar";
 
 const CheckoutPage = () => {
   const cart = useContext(CartContext);
   return (
     <>
+      <CheckoutNavbar />
       <div className={styles.checkoutContainer}>
         <div className={styles.bagSummaryFlex}>
           <div className={styles.bag}>
