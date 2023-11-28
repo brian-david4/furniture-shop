@@ -13,6 +13,7 @@ const CheckoutPage = () => {
       <div className={styles.checkoutContainer}>
         <div className={styles.bagSummaryFlex}>
           <div className={styles.bag}>
+            <h1 className={styles.bagTitle}>BAG</h1>
             {cart.items.map((cartItem, idx) => (
               <BagItem
                 key={idx}
@@ -21,6 +22,7 @@ const CheckoutPage = () => {
               />
             ))}
           </div>
+
           <div className={styles.summary}>
             <h1 className={styles.summaryTitle}>Summary</h1>
 

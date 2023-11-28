@@ -22,9 +22,13 @@
   border-radius: 5px;
   overflow: hidden;
 }
+.bagTitle {
+  font-family: "Hatton";
+  line-height: 0%;
+  user-select: none;
+}
 .summary {
-  width: 25vw;
-  /* background-color: rgb(146, 199, 246); */
+  width: 35vw;
   background-color: var(--cart-pink);
   height: 60vh;
   border-radius: 5px;
@@ -32,9 +36,11 @@
   flex-direction: column;
   gap: 2.5vh;
   align-items: center;
+  transition: width 150ms var(--ease-in-out-quart);
 }
 .summaryTitle {
-  font-family: "Gambarino";
+  font-family: "Hatton";
+  user-select: none;
 }
 .totalWrapper {
   width: 90%;
@@ -67,7 +73,7 @@
   width: 80%;
 }
 .grandTotalTitle {
-  font-family: "Gambarino";
+  font-family: "Hatton";
   font-size: 1.5rem;
 }
 .grandTotalPrice {
@@ -88,4 +94,10 @@
 }
 .checkoutButton:hover {
   background-color: var(--cart-btn-disabled);
+}
+
+@media (min-width: 768px) {
+  .summary {
+    width: 25vw;
+  }
 }
