@@ -43,6 +43,14 @@
   font-family: "Hatton";
   src: url("../Fonts/PPHatton-Medium.otf");
 }
+@font-face {
+  font-family: "Mondwest";
+  src: url("../Fonts/PPMondwest-Regular.otf");
+}
+@font-face {
+  font-family: "Grafier Regular";
+  src: url("../Fonts/PPGrafier-Regular.otf");
+}
 body {
   margin: 0;
   padding: 0;
