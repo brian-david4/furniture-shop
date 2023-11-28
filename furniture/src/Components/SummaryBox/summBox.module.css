@@ -63,6 +63,10 @@
   font-family: "Vietnam Light";
   transition: background-color 150ms ease-in-out;
 }
+.checkoutButton:disabled {
+  background-color: rgb(0, 0, 0) !important;
+  cursor: pointer;
+}
 .checkoutButton:hover {
   background-color: var(--cart-btn-disabled);
 }

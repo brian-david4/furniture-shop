@@ -3,7 +3,11 @@ import { useContext } from "react";
 import styles from "./summBox.module.css";
 import { CartContext } from "../../Data/CartContext";
 
-const SummaryBox = () => {
+interface SummaryBoxProps {
+  disabled: boolean;
+}
+
+const SummaryBox = ({ disabled }: SummaryBoxProps) => {
   const cart = useContext(CartContext);
   const total = cart.getTotalCost() > 0 ? cart.getTotalCost() : "0.00";
   return (
@@ -27,8 +31,14 @@ const SummaryBox = () => {
         <div className={styles.grandTotalPrice}>£{total}</div>
       </div>
 
-      <Link className={styles.link} to="/checkout/shipping-address">
-        <button className={styles.checkoutButton}>Guest Checkout</button>
+      <Link
+        aria-disabled={disabled}
+        className={styles.link}
+        to="/checkout/shipping-address"
+      >
+        <button disabled={disabled} className={styles.checkoutButton}>
+          Guest Checkout
+        </button>
       </Link>
     </div>
   );
