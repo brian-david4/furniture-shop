@@ -27,3 +27,33 @@
   line-height: 0%;
   user-select: none;
 }
+.noCartItems {
+  height: 20vh;
+  width: 100%;
+  border-radius: 10px;
+  color: aliceblue;
+  background-color: rgb(7, 38, 12);
+  font-family: "Neue Montreal Book";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+}
+.cool {
+  position: relative;
+  display: block;
+  font-family: "Mondwest";
+  font-size: 1.2rem;
+}
+.cool:hover > .ltr {
+  transform: translateY(-10%);
+  letter-spacing: 1.5rem;
+}
+.ltr {
+  position: relative;
+  display: inline-block;
+  min-width: 0.3rem;
+  transition: letter-spacing 250ms,
+    transform 250ms cubic-bezier(0.45, 0, 0.55, 1);
+}
