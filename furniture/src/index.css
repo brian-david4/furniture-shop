@@ -20,6 +20,10 @@
   src: url("../Fonts/PPNeueMontreal-Italic.otf");
 }
 @font-face {
+  font-family: "Neue Montreal Bold";
+  src: url("../Fonts/PPNeueMontreal-Bold.otf");
+}
+@font-face {
   font-family: "Gambarino";
   src: url("../Fonts/Gambarino-Regular.otf");
 }
@@ -32,12 +36,12 @@
   src: url("../Fonts/BeVietnamPro-Medium.otf");
 }
 @font-face {
-  font-family: "Neue Montreal Bold";
-  src: url("../Fonts/PPNeueMontreal-Bold.otf");
-}
-@font-face {
   font-family: "Vietnam Bold";
   src: url("../Fonts/BeVietnamPro-Bold.otf");
+}
+@font-face {
+  font-family: "Hatton";
+  src: url("../Fonts/PPHatton-Medium.otf");
 }
 body {
   margin: 0;
