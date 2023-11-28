@@ -28,6 +28,7 @@
   font-size: 0.8rem;
   transition: color 150ms ease-in-out;
   color: rgb(97, 97, 97);
+  cursor: pointer;
 }
 .removeCart:hover {
   color: black;
