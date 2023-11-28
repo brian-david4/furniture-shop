@@ -7,6 +7,7 @@ import CheckoutNavbar from "../../Components/CheckoutNavbar/CheckoutNavbar";
 
 const CheckoutPage = () => {
   const cart = useContext(CartContext);
+  const total = cart.getTotalCost();
   return (
     <>
       <CheckoutNavbar />
@@ -29,7 +30,7 @@ const CheckoutPage = () => {
             <div className={styles.totalWrapper}>
               <div className={styles.subtotal}>
                 <div className={styles.subtotalTitle}>subtotal</div>
-                <div className={styles.subtotalPrice}>£1000</div>
+                <div className={styles.subtotalPrice}>£{total}</div>
               </div>
               <div className={styles.delivery}>
                 <div>delivery</div>
@@ -40,7 +41,7 @@ const CheckoutPage = () => {
 
             <div className={styles.grandTotal}>
               <div className={styles.grandTotalTitle}>TOTAL</div>
-              <div className={styles.grandTotalPrice}>£1000</div>
+              <div className={styles.grandTotalPrice}>£{total}</div>
             </div>
 
             <Link className={styles.link} to="/checkout/shipping-address">
