@@ -58,7 +58,6 @@ const CheckoutPage = () => {
               />
             ))}
           </div>
-
           <SummaryBox disabled={cartLengthZero} />
         </div>
       </div>

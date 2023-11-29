@@ -19,10 +19,12 @@ const CheckoutNavbar = () => {
   return (
     <>
       <div className={styles.navbar}>
-        <div className={styles.title}>
-          <h1 className={styles.perch}>perch& </h1>
-          <div className={styles.highland}>highland</div>
-        </div>
+        <Link className={styles.titleLink} to="/">
+          <div className={styles.title}>
+            <h1 className={styles.perch}>perch& </h1>
+            <div className={styles.highland}>highland</div>
+          </div>
+        </Link>
         <div className={styles.navLinks}>
           {links.map((link, idx) => (
             <Link className={styles.navLink} to={link.to} key={idx}>

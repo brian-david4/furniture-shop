@@ -15,6 +15,10 @@
   flex-direction: column;
   line-height: 10%;
   user-select: none;
+  color: black;
+}
+.titleLink {
+  text-decoration: none;
 }
 .perch {
   font-family: "Gambarino";
