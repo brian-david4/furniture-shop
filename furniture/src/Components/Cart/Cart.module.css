@@ -23,7 +23,8 @@
   max-width: 850px;
   background-color: rgb(186, 159, 159);
   border-radius: var(--border-rad);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   gap: 0;

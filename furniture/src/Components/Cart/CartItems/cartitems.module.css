@@ -1,4 +1,4 @@
 .cartItems {
-  height: calc(100% - 15vh);
+  height: fit-content;
   width: 100%;
 }
