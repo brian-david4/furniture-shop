@@ -5,6 +5,7 @@
   padding-right: 1vmin;
   overflow: hidden;
   cursor: pointer;
+  user-select: none;
 }
 
 /* cartMenu */

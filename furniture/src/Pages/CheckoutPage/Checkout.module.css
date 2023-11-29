@@ -39,6 +39,7 @@
   align-items: center;
   justify-content: center;
   text-transform: capitalize;
+  letter-spacing: 3px;
 }
 .cool {
   position: relative;

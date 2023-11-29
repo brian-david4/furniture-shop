@@ -13,6 +13,15 @@ const Cart = () => {
     setCartQuantity(quantity);
   }, [cart.items]);
 
+  useEffect(() => {
+    if (isCartOpen) {
+      document.body.style.overflowY = "hidden";
+    }
+    return () => {
+      document.body.style.overflowY = "scroll";
+    };
+  }, [isCartOpen]);
+
   return (
     <>
       <div
