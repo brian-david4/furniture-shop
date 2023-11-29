@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CartContext } from "../../Data/CartContext";
 import styles from "./Checkout.module.css";
 import BagItem from "../../Components/BagItem/BagItem";
@@ -8,6 +8,15 @@ import SummaryBox from "../../Components/SummaryBox/SummaryBox";
 const CheckoutPage = () => {
   const cart = useContext(CartContext);
   const cartLengthZero = cart.getTotalCartQuantity() > 0 ? false : true;
+
+  useEffect(() => {
+    if (cartLengthZero) {
+      document.body.style.overflowY = "hidden";
+    }
+    return () => {
+      document.body.style.overflowY = "scroll";
+    };
+  }, [cartLengthZero]);
 
   return (
     <>
