@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Img } from "react-image";
 import { AnimatePresence, motion } from "framer-motion";
-import HomeFurniture from "../Components/HomeFurniture/HomeFurniture";
-import { useMousePosition } from "../hooks/useMousePosition";
-import HomeNavBar from "../Components/HomeNavBar/HomeNavBar";
-import HomeFooter from "../Components/HomeFooter/HomeFooter";
-import HomeFurnContent from "../Components/HomeFurnContent/HomeFurnContent";
+import HomeFurniture from "../../Components/HomeFurniture/HomeFurniture";
+import { useMousePosition } from "../../hooks/useMousePosition";
+import HomeNavBar from "../../Components/HomeNavBar/HomeNavBar";
+import HomeFooter from "../../Components/HomeFooter/HomeFooter";
+import HomeFurnContent from "../../Components/HomeFurnContent/HomeFurnContent";
 import styles from "./home.module.css";
 import bgWEBP from "/00.webp";
 import bgJPG from "/00.jpg";
