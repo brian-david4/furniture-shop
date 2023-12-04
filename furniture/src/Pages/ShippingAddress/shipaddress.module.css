@@ -1,0 +1,59 @@
+.bodyPlacement {
+  position: absolute;
+  width: 100%;
+  background-color: cornflowerblue;
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: fit-content;
+}
+.addressForm {
+  position: relative;
+  background-color: blanchedalmond;
+  height: 65vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5vh;
+  padding-left: 15px;
+  border-radius: 5px;
+}
+.deliveryTitle {
+  font-family: "Hatton";
+}
+.nameField {
+  display: flex;
+  gap: 1.5vw;
+}
+.inputText {
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.505);
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: border 150ms ease-in-out;
+  margin: 15px;
+  margin-left: 0;
+}
+.inputText:focus-visible {
+  border: 0;
+}
+.inputText:hover {
+  border: 1px solid black;
+}
+
+/* delivery address */
+.deliveryAddress {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .bodyPlacement {
+    height: calc(100vh - var(--checkout-header-height));
+    flex-direction: row;
+  }
+}
