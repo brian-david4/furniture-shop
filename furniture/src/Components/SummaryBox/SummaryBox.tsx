@@ -4,7 +4,7 @@ import { CartContext } from "../../Data/CartContext";
 
 interface SummaryBoxProps {
   disabled: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const SummaryBox = ({ children }: SummaryBoxProps) => {
