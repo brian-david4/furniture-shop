@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 import styles from "./summBox.module.css";
 import { CartContext } from "../../Data/CartContext";
 
 interface SummaryBoxProps {
   disabled: boolean;
+  children: React.ReactNode;
 }
 
-const SummaryBox = ({ disabled }: SummaryBoxProps) => {
+const SummaryBox = ({ children }: SummaryBoxProps) => {
   const cart = useContext(CartContext);
   const total = cart.getTotalCost() > 0 ? cart.getTotalCost() : "0.00";
   return (
@@ -31,15 +31,7 @@ const SummaryBox = ({ disabled }: SummaryBoxProps) => {
         <div className={styles.grandTotalPrice}>£{total}</div>
       </div>
 
-      <Link
-        aria-disabled={disabled}
-        className={styles.link}
-        to="/checkout/shipping-address"
-      >
-        <button disabled={disabled} className={styles.checkoutButton}>
-          Guest Checkout
-        </button>
-      </Link>
+      {children}
     </div>
   );
 };

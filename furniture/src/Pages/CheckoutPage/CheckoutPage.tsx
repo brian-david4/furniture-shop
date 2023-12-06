@@ -4,6 +4,7 @@ import styles from "./Checkout.module.css";
 import BagItem from "../../Components/BagItem/BagItem";
 import CheckoutNavbar from "../../Components/CheckoutNavbar/CheckoutNavbar";
 import SummaryBox from "../../Components/SummaryBox/SummaryBox";
+import { Link } from "react-router-dom";
 
 const CheckoutPage = () => {
   const cart = useContext(CartContext);
@@ -67,7 +68,21 @@ const CheckoutPage = () => {
               />
             ))}
           </div>
-          <SummaryBox disabled={cartLengthZero} />
+
+          <SummaryBox disabled={cartLengthZero}>
+            <Link
+              aria-disabled={cartLengthZero}
+              className={styles.link}
+              to="/checkout/shipping-address"
+            >
+              <button
+                disabled={cartLengthZero}
+                className={styles.checkoutButton}
+              >
+                Guest Checkout
+              </button>
+            </Link>
+          </SummaryBox>
         </div>
       </div>
     </>
