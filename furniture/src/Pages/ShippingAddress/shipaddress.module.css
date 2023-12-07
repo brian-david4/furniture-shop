@@ -12,7 +12,6 @@
 }
 .addressForm {
   position: relative;
-  background-color: blanchedalmond;
   height: 65vh;
   width: 45vw;
   min-width: 380px;
@@ -25,18 +24,23 @@
 .deliveryTitle {
   font-family: "Hatton";
 }
-.nameField {
-  gap: 1.5vw;
+.inputs {
+  min-height: 300px;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
 }
 .townPostcode,
 .emailPhone,
-.nameField {
-  /* background-color: aqua; */
-  width: 95%;
+.nameField,
+.addressLine1 {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
+  min-width: 100%;
 }
 .inputText {
   border-radius: 10px;
@@ -61,12 +65,8 @@
   display: flex;
   flex-direction: column;
 }
-.addressLine1 {
-  /* background-color: blue; */
-  width: 95%;
-}
 .addressLine1 > input {
-  width: 94%;
+  width: 95%;
 }
 
 @media (min-width: 768px) {

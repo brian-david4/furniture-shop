@@ -9,7 +9,7 @@ const ShippingAddress = () => {
       <div className={styles.bodyPlacement}>
         <div className={styles.addressForm}>
           <h1 className={styles.deliveryTitle}>Delivery</h1>
-          <div className="stylesinputs">
+          <div className={styles.inputs}>
             <div className={styles.nameField}>
               <div className={styles.firstNameField}>
                 <input
