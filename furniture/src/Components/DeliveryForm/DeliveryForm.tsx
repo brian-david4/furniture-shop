@@ -1,3 +1,4 @@
+import DeliveryInput from "../DeliveryInput/DeliveryInput";
 import styles from "./deliveryform.module.css";
 
 const DeliveryForm = () => {
@@ -6,45 +7,21 @@ const DeliveryForm = () => {
       <h1 className={styles.deliveryTitle}>Delivery</h1>
       <div className={styles.inputs}>
         <div className={styles.nameField}>
-          <input className={styles.inputText} type="text" id="first-name" />
+          <DeliveryInput id="first-name" label="First Name*" />
 
-          <input
-            className={styles.inputText}
-            type="text"
-            placeholder="Last Name*"
-          />
+          <DeliveryInput id="last-name" label="Last Name*" />
         </div>
         <div className={styles.deliveryAddress}>
           <div className={styles.addressLine1}>
-            <input
-              className={styles.inputText}
-              type="text"
-              placeholder="Address Line 1*"
-            />
+            <DeliveryInput id="address-line1" label="Address Line 1*" />
           </div>
           <div className={styles.townPostcode}>
-            <input
-              className={styles.inputText}
-              type="text"
-              placeholder="Town/City*"
-            />{" "}
-            <input
-              className={styles.inputText}
-              type="text"
-              placeholder="Postcode*"
-            />
+            <DeliveryInput id="town-city" label="Town/City*" />{" "}
+            <DeliveryInput id="postcode" label="Postcode*" />
           </div>
           <div className={styles.emailPhone}>
-            <input
-              className={styles.inputText}
-              type="text"
-              placeholder="Email*"
-            />{" "}
-            <input
-              className={styles.inputText}
-              type="text"
-              placeholder="Phone Number*"
-            />
+            <DeliveryInput id="email" label="Email*" />{" "}
+            <DeliveryInput id="phone-number" label="Phone Number*" />
           </div>
         </div>
       </div>
