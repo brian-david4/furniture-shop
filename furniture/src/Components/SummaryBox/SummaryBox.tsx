@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import styles from "./summBox.module.css";
 import { CartContext } from "../../Data/CartContext";
+import Divider from "../Divider/Divider";
 
 interface SummaryBoxProps {
   disabled: boolean;
@@ -23,7 +24,7 @@ const SummaryBox = ({ children }: SummaryBoxProps) => {
           <div>delivery</div>
           <div className={styles.deliveryPrice}>£0.00</div>
         </div>
-        <div className={styles.divider}></div>
+        <Divider />
       </div>
 
       <div className={styles.grandTotal}>

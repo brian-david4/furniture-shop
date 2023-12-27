@@ -33,14 +33,6 @@ label[data-input-valid="true"] {
   color: black;
 }
 
-/* delivery address */
-.deliveryAddress {
-  display: flex;
-  flex-direction: column;
-}
-.addressLine1 > input {
-  width: 95%;
-}
 label {
   position: absolute;
   top: 38%;

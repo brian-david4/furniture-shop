@@ -21,11 +21,6 @@
   flex-direction: column;
   gap: 2vh;
 }
-.divider {
-  height: 1px;
-  width: 100%;
-  background-color: black;
-}
 .subtotal,
 .delivery {
   display: grid;
