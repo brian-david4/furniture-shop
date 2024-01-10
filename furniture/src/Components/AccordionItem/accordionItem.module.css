@@ -1,0 +1,30 @@
+.accordionItem {
+  border: 1px solid #ccc;
+}
+.accordionItem:not(:first-of-type) {
+  border-top: 0;
+}
+.accordionItemTitle {
+  width: 100%;
+  margin: 0;
+}
+.accordionItemBtn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  border: 0;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-family: "Neue Montreal Book";
+  cursor: pointer;
+  user-select: none;
+}
+.accordionItemContainer {
+  overflow: hidden;
+}
+.accordionItemContent {
+  border-top: 1px solid #cccccc;
+  padding: 0px 20px;
+  box-sizing: border-box;
+}

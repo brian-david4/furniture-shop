@@ -5,6 +5,7 @@ import ProductPage from "./Components/ProductPage/ProductPage";
 import CartProvider from "./Data/CartContext";
 import CheckoutPage from "./Pages/CheckoutPage/CheckoutPage";
 import ShippingAddress from "./Pages/ShippingAddress/ShippingAddress";
+import TestPage from "./Pages/TestPage/TestPage";
 
 function App() {
   const location = useLocation();
@@ -21,6 +22,7 @@ function App() {
             path="/checkout/shipping-address"
             element={<ShippingAddress />}
           />
+          <Route path="/test-page" element={<TestPage />} />
         </Routes>
       </CartProvider>
     </>

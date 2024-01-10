@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
 import DeliveryInput from "../DeliveryInput/DeliveryInput";
 import styles from "./deliveryform.module.css";
 
 const DeliveryForm = () => {
   return (
     <div className={styles.addressForm}>
-      <h1 className={styles.deliveryTitle}>Delivery</h1>
+      <Link to="/test-page">test page</Link>
+      {/* <h1 className={styles.deliveryTitle}>Delivery</h1> */}
       <div className={styles.inputs}>
         <div className={styles.nameField}>
           <DeliveryInput id="first-name" label="First Name*" />
