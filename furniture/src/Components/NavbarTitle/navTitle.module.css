@@ -1,9 +1,9 @@
 .navTitle {
-  /* position: absolute; */
   font-family: "Gambarino";
   align-self: flex-start;
   line-height: 0.5vmin;
   user-select: none;
+  display: none;
 }
 .link {
   position: absolute;
@@ -12,7 +12,6 @@
   color: black;
   width: fit-content;
   height: fit-content;
-  /* background-color: bisque; */
 }
 .navTitle > h1 {
   font-size: 1.5rem;
@@ -23,6 +22,9 @@
   font-family: "Vietnam Light";
 }
 @media (min-width: 540px) {
+  .navTitle {
+    display: block;
+  }
   .navTitle > h1 {
     font-size: 2rem;
   }

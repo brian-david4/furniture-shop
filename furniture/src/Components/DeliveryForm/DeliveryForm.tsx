@@ -1,4 +1,5 @@
 import DeliveryInput from "../DeliveryInput/DeliveryInput";
+import DeliveryInputMax from "../DeliveryInputMax/DeliveryInputMax";
 import styles from "./deliveryform.module.css";
 
 const DeliveryForm = () => {
@@ -13,7 +14,7 @@ const DeliveryForm = () => {
         </div>
         <div className={styles.deliveryAddress}>
           <div className={styles.addressLine1}>
-            <DeliveryInput id="address-line1" label="Address Line 1*" />
+            <DeliveryInputMax id="address-line1" label="Address Line 1*" />
           </div>
           <div className={styles.townPostcode}>
             <DeliveryInput id="town-city" label="Town/City*" />{" "}

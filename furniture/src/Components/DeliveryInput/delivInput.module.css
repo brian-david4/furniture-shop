@@ -1,10 +1,11 @@
 .inputLabelWrapper {
   position: relative;
-  width: fit-content;
+  min-width: 100px;
   display: flex;
 }
 .inputText {
   border-radius: 5px;
+  width: 100%;
   border: 1px solid rgb(170, 170, 170);
   background-color: #f5f5f5;
   padding: 10px 0px 10px 10px;

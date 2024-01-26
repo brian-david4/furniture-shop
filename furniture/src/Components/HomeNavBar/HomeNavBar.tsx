@@ -20,5 +20,3 @@ const HomeNavBar = () => {
 };
 
 export default HomeNavBar;
-
-// cart opens cart modal

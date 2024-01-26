@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./delivInput.module.css";
 
-interface DeliveryInputProps {
+export interface DeliveryInputProps {
   label: string;
   id: string;
 }
