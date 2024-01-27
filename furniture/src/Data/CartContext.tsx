@@ -4,6 +4,8 @@ import { getProductData } from "./getProductData";
 
 type CartContextType = {
   items: CartItem[];
+  deliveryPrice: number;
+  setDeliveryPrice: (num: number) => void;
   getProductQuantity: (id: number) => number;
   addToCart: (id: number, quantity: number, stock: number) => void;
   removeOneFromCart: (id: number) => void;
@@ -21,6 +23,13 @@ interface CartContextProps {
 
 const CartProvider = ({ children }: CartContextProps) => {
   const [cartProducts, setCartProducts] = useState<CartItem[]>([]);
+  const [deliveryPriceState, setDeliveryPriceState] = useState<number>(0);
+
+  const setDeliveryPrice = (num: number) => {
+    setDeliveryPriceState(num);
+  };
+
+  const deliveryPrice = deliveryPriceState;
 
   const getProductQuantity = (id: number) => {
     const quantity = cartProducts.find(
@@ -100,6 +109,8 @@ const CartProvider = ({ children }: CartContextProps) => {
 
   const contextValue = {
     items: cartProducts,
+    setDeliveryPrice,
+    deliveryPrice,
     getProductQuantity,
     addToCart,
     removeOneFromCart,

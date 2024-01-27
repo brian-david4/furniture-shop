@@ -6,7 +6,7 @@ import styles from "./accordion.module.css";
 const Accordion = ({ items }: { items: AccordionData[] }) => {
   const [currentIdx, setCurrentIdx] = useState(0);
   const onClick = (idx: number) => {
-    setCurrentIdx((currentValue) => (currentValue !== idx ? idx : -1));
+    setCurrentIdx((currentValue) => (currentValue !== idx ? idx : 0));
   };
 
   return (
