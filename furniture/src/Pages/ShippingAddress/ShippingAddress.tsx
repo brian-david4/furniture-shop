@@ -16,7 +16,6 @@ const ShippingAddress = () => {
     <>
       <CheckoutNavbar />
       <div className={styles.bodyPlacement}>
-        {/* <DeliveryForm /> */}
         <Accordion items={items} />
         <SummaryBox disabled={false} />
       </div>
