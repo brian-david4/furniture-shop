@@ -1,7 +1,7 @@
 .summary {
-  width: 35vw;
+  min-width: 40vmax;
   background-color: var(--cart-pink);
-  height: 60vh;
+  height: 40vh;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -49,6 +49,7 @@
 
 @media (min-width: 768px) {
   .summary {
-    width: 25vw;
+    min-width: 25vw;
+    height: 50vh;
   }
 }
