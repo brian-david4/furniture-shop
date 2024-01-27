@@ -2,7 +2,7 @@
   border: 1px solid black;
   overflow: hidden;
   max-width: 40vw;
-  min-width: 380px;
+  min-width: 340px;
 }
 .accordionItem:not(:first-of-type) {
   border-top: 0;
@@ -24,14 +24,15 @@
 }
 .accordionItemContainer {
   overflow: hidden;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .accordionItemContent {
   border-top: 1px solid black;
   width: 100%;
-  padding: 0px 20px;
   box-sizing: border-box;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
