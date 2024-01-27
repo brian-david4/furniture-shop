@@ -1,7 +1,6 @@
 .accordionItem {
   border: 1px solid black;
   overflow: hidden;
-  max-width: 40vw;
   min-width: 340px;
 }
 .accordionItem:not(:first-of-type) {

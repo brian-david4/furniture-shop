@@ -1,8 +1,7 @@
 .addressForm {
   position: relative;
   height: 30vh;
-  width: 100%;
-  min-width: 340px;
+  max-width: 340px;
   display: flex;
   justify-content: center;
   align-items: center;
