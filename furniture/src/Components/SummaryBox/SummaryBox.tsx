@@ -10,7 +10,9 @@ interface SummaryBoxProps {
 
 const SummaryBox = ({ children }: SummaryBoxProps) => {
   const cart = useContext(CartContext);
-  const total = cart.getTotalCost() > 0 ? cart.getTotalCost() : "0.00";
+  const deliveryPrice = cart.deliveryPrice;
+  const total = cart.getTotalCost() > 0 ? cart.getTotalCost() : 0;
+  const grandTotal = +total + +deliveryPrice;
   return (
     <div className={styles.summary}>
       <h1 className={styles.summaryTitle}>Summary</h1>
@@ -22,14 +24,14 @@ const SummaryBox = ({ children }: SummaryBoxProps) => {
         </div>
         <div className={styles.delivery}>
           <div>delivery</div>
-          <div className={styles.deliveryPrice}>£0.00</div>
+          <div className={styles.deliveryPrice}>£{deliveryPrice}</div>
         </div>
         <Divider />
       </div>
 
       <div className={styles.grandTotal}>
         <div className={styles.grandTotalTitle}>TOTAL</div>
-        <div className={styles.grandTotalPrice}>£{total}</div>
+        <div className={styles.grandTotalPrice}>£{grandTotal}</div>
       </div>
 
       {children}

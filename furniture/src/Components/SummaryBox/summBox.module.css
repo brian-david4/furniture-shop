@@ -38,6 +38,7 @@
   display: flex;
   flex-direction: row;
   width: 80%;
+  user-select: none;
 }
 .grandTotalTitle {
   font-family: "Hatton";
