@@ -29,7 +29,7 @@ const CartProvider = ({ children }: CartContextProps) => {
     setDeliveryPriceState(num);
   };
 
-  const deliveryPrice = deliveryPriceState;
+  const deliveryPrice = deliveryPriceState / 100;
 
   const getProductQuantity = (id: number) => {
     const quantity = cartProducts.find(

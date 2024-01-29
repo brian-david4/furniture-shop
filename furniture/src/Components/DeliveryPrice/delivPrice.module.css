@@ -1,23 +1,30 @@
 .container {
   height: 20vh;
-  min-height: 150px;
+  min-height: 300px;
   /* max-width: 40vw;
   min-width: 340px; */
   width: 100%;
-  background-color: cornflowerblue;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .delivery {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  /* gap: 5px; */
   background-color: aqua;
   width: 100%;
 }
 .priceOptions {
   display: flex;
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.375);
+  user-select: none;
+  cursor: pointer;
   justify-content: space-around;
   align-items: center;
   background-color: coral;
