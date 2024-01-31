@@ -1,31 +1,60 @@
 .container {
   height: 20vh;
-  min-height: 300px;
+  min-height: 255px;
   /* max-width: 40vw;
   min-width: 340px; */
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: end;
 }
 .delivery {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* gap: 5px; */
-  background-color: aqua;
   width: 100%;
 }
 .priceOptions {
   display: flex;
   height: 70px;
   width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.375);
+  border-top: 1px solid rgba(0, 0, 0, 0.375);
   user-select: none;
   cursor: pointer;
   justify-content: space-around;
   align-items: center;
-  background-color: coral;
+  overflow: hidden;
+}
+.typeDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
+}
+.deliveryType {
+  position: relative;
+  bottom: 10px;
+  font-family: "Grafier Regular";
+}
+.deliveryDescription {
+  position: relative;
+  bottom: 15px;
+  font-family: "Neue Montreal Book";
+  font-size: 0.8rem;
+}
+.priceOptions:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.375);
+}
+.saveButton {
+  border-radius: 10px;
+  border: 1px solid;
+  margin-top: 5px;
+  margin-right: 25px;
+  padding: 7px 10px;
+  background-color: var(--cart-dark-red);
+  color: aliceblue;
 }
