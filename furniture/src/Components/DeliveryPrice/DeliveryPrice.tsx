@@ -1,10 +1,16 @@
 import { useContext, useState } from "react";
 import styles from "./delivPrice.module.css";
 import { CartContext } from "../../Data/CartContext";
+import { motion } from "framer-motion";
+import { priceOptions } from "./delivAnims";
 
 const DeliveryPrice = () => {
   const cart = useContext(CartContext);
-  const [activeDelivery, setActiveDelivery] = useState(0);
+  // const [activeDelivery, setActiveDelivery] = useState(0);
+  const [clickedDelivery, setClickedDelivery] = useState({
+    isActive: false,
+    index: 0,
+  });
   const prices = [
     {
       type: "Standard",
@@ -19,23 +25,32 @@ const DeliveryPrice = () => {
       <div className={styles.delivery}>
         {prices.map((price, idx) => (
           <>
-            <div
-              onClick={() => setActiveDelivery(idx)}
+            <motion.div
+              onClick={() => setClickedDelivery({ isActive: true, index: idx })}
               className={styles.priceOptions}
               key={idx}
+              variants={priceOptions}
+              initial="initial"
+              animate={
+                clickedDelivery.isActive && clickedDelivery.index === idx
+                  ? "active"
+                  : "inactive"
+              }
             >
               <div className={styles.typeDescription}>
                 <h4 className={styles.deliveryType}>{price.type}</h4>
                 <div className={styles.deliveryDescription}>{price.detail}</div>
               </div>
               <div className={styles.deliveryPrice}>£{price.price / 100}</div>
-            </div>
+            </motion.div>
           </>
         ))}
       </div>
       <button
         className={styles.saveButton}
-        onClick={() => cart.setDeliveryPrice(prices[activeDelivery].price)}
+        onClick={() =>
+          cart.setDeliveryPrice(prices[clickedDelivery.index].price)
+        }
       >
         save
       </button>

@@ -7,6 +7,8 @@
   --cart-dark-red: rgb(73, 5, 5);
   --cart-pink: rgb(255, 202, 202);
   --cart-btn-disabled: rgb(88, 72, 72);
+  --checkout-navbar-colour: rgb(209, 226, 244);
+  --delivery-selected: rgba(209, 226, 244, 0.56);
   --two-third-width: 65vw;
   --one-third-width: 35vw;
   --border-rad: 20px;

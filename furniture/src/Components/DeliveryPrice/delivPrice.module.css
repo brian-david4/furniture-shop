@@ -46,6 +46,9 @@
   font-family: "Neue Montreal Book";
   font-size: 0.8rem;
 }
+.deliveryPrice {
+  font-family: "Neue Montreal Book";
+}
 .priceOptions:last-child {
   border-bottom: 1px solid rgba(0, 0, 0, 0.375);
 }
