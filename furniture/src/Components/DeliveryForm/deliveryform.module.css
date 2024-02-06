@@ -1,6 +1,7 @@
 .addressForm {
   position: relative;
   height: 30vh;
+  min-height: 250px;
   max-width: 340px;
   display: flex;
   justify-content: center;
@@ -9,7 +10,7 @@
 }
 
 .inputs {
-  min-height: 300px;
+  min-height: 200px;
   width: 95%;
   display: flex;
   flex-direction: column;
