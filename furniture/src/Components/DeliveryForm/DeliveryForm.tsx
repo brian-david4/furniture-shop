@@ -5,7 +5,6 @@ import DeliveryInput from "../DeliveryInput/DeliveryInput";
 import DeliveryInputMax from "../DeliveryInputMax/DeliveryInputMax";
 // import { DeliveryAddress } from "../../types";
 import styles from "./deliveryform.module.css";
-import { motion } from "framer-motion";
 
 const postcodeRegex = new RegExp(/^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i);
 
@@ -54,7 +53,9 @@ const DeliveryForm = () => {
             </div>
           </div>
         </div>
-        <button type="submit">submit</button>
+        <button className={styles.submitButton} type="submit">
+          submit
+        </button>
 
         {errors && (
           <div className={styles.errorMessage}>
