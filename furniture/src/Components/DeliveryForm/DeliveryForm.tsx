@@ -5,6 +5,7 @@ import DeliveryInput from "../DeliveryInput/DeliveryInput";
 import DeliveryInputMax from "../DeliveryInputMax/DeliveryInputMax";
 // import { DeliveryAddress } from "../../types";
 import styles from "./deliveryform.module.css";
+import { motion } from "framer-motion";
 
 const postcodeRegex = new RegExp(/^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i);
 
@@ -22,11 +23,12 @@ type DeliveryAddress = z.infer<typeof schema>;
 
 const DeliveryForm = () => {
   const methods = useForm<DeliveryAddress>({ resolver: zodResolver(schema) });
+
   const {
     handleSubmit,
-    formState: { errors },
+    formState: { isSubmitting, isSubmitted },
   } = methods;
-  const onSubmit: SubmitHandler<DeliveryAddress> = (data) => {
+  const onSubmit: SubmitHandler<DeliveryAddress> = async (data) => {
     console.log(data);
   };
 
@@ -53,14 +55,26 @@ const DeliveryForm = () => {
             </div>
           </div>
         </div>
-        <button className={styles.submitButton} type="submit">
-          submit
+        <button
+          disabled={isSubmitting}
+          className={styles.submitButton}
+          type="submit"
+        >
+          save details
         </button>
 
-        {errors && (
+        {!isSubmitted ? (
           <div className={styles.errorMessage}>
             *All inputs must be complete and valid
           </div>
+        ) : (
+          <motion.div
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 0, transition: { duration: 0.4, delay: 1.5 } }}
+            className={styles.successMessage}
+          >
+            saved!
+          </motion.div>
         )}
       </form>
     </FormProvider>
