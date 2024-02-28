@@ -11,6 +11,14 @@
   height: fit-content;
 }
 
+.orderButton {
+  border-radius: 5px;
+  border: 1px solid var(--cart-dark-red-outline);
+  color: aliceblue;
+  background-color: var(--cart-dark-red);
+  padding: 5px;
+}
+
 @media (min-width: 768px) {
   .bodyPlacement {
     height: calc(100vh - var(--checkout-header-height));

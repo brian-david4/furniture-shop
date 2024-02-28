@@ -17,7 +17,9 @@ const ShippingAddress = () => {
       <CheckoutNavbar />
       <div className={styles.bodyPlacement}>
         <Accordion items={items} />
-        <SummaryBox disabled={false} />
+        <SummaryBox disabled={false}>
+          <button className={styles.orderButton}>Place Order</button>
+        </SummaryBox>
       </div>
     </>
   );

@@ -5,6 +5,7 @@
   --prod-navbar-hgt: 10vh;
   --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
   --cart-dark-red: rgb(73, 5, 5);
+  --cart-dark-red-outline: rgb(29, 2, 2);
   --cart-pink: rgb(255, 202, 202);
   --cart-btn-disabled: rgb(88, 72, 72);
   --checkout-navbar-colour: rgb(209, 226, 244);

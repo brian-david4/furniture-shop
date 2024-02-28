@@ -44,7 +44,7 @@
 .submitButton {
   font-family: "Vietnam Light";
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid var(--cart-dark-red-outline);
   background-color: var(--cart-dark-red);
   opacity: 0.9;
   color: aliceblue;
