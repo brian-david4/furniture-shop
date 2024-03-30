@@ -5,6 +5,8 @@ import { getProductData } from "./getProductData";
 type CartContextType = {
   items: CartItem[];
   deliveryPrice: number;
+  orderSubmitStatus: boolean;
+  setOrderStatus: (status: boolean) => void;
   setDeliveryPrice: (num: number) => void;
   getProductQuantity: (id: number) => number;
   addToCart: (id: number, quantity: number, stock: number) => void;
@@ -24,6 +26,15 @@ interface CartContextProps {
 const CartProvider = ({ children }: CartContextProps) => {
   const [cartProducts, setCartProducts] = useState<CartItem[]>([]);
   const [deliveryPriceState, setDeliveryPriceState] = useState<number>(0);
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+
+  const setOrderStatus = (status: boolean) => {
+    if (status) {
+      setIsSubmitted(true);
+    }
+  };
+
+  const orderSubmitStatus = isSubmitted;
 
   const setDeliveryPrice = (num: number) => {
     setDeliveryPriceState(num);
@@ -109,6 +120,8 @@ const CartProvider = ({ children }: CartContextProps) => {
 
   const contextValue = {
     items: cartProducts,
+    orderSubmitStatus,
+    setOrderStatus,
     setDeliveryPrice,
     deliveryPrice,
     getProductQuantity,

@@ -1,7 +1,7 @@
 .addressForm {
   position: relative;
   height: 30vh;
-  min-height: 250px;
+  min-height: 270px;
   max-width: 340px;
   display: flex;
   justify-content: center;
@@ -46,8 +46,13 @@
   border-radius: 5px;
   border: 1px solid var(--cart-dark-red-outline);
   background-color: var(--cart-dark-red);
+  padding: 2px;
   opacity: 0.9;
   color: aliceblue;
+  transition: 150ms background-color ease-in-out;
+}
+.submitButton[disabled] {
+  background-color: var(--cart-btn-disabled) !important;
 }
 .successMessage {
   font-family: 0.8rem;

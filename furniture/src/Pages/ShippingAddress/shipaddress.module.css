@@ -18,6 +18,9 @@
   background-color: var(--cart-dark-red);
   padding: 5px;
 }
+[disabled="true"] {
+  background-color: var(--cart-btn-disabled) !important;
+}
 
 @media (min-width: 768px) {
   .bodyPlacement {

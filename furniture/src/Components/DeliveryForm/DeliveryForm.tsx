@@ -3,9 +3,10 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import DeliveryInput from "../DeliveryInput/DeliveryInput";
 import DeliveryInputMax from "../DeliveryInputMax/DeliveryInputMax";
-// import { DeliveryAddress } from "../../types";
 import styles from "./deliveryform.module.css";
 import { motion } from "framer-motion";
+import { useContext, useState } from "react";
+import { CartContext } from "../../Data/CartContext";
 
 const postcodeRegex = new RegExp(/^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i);
 
@@ -23,18 +24,46 @@ type DeliveryAddress = z.infer<typeof schema>;
 
 const DeliveryForm = () => {
   const methods = useForm<DeliveryAddress>({ resolver: zodResolver(schema) });
+  const cart = useContext(CartContext);
+  const [isErrorInForm, setIsErrorInForm] = useState(true);
 
   const {
     handleSubmit,
-    formState: { isSubmitting, isSubmitted },
+    setError,
+    formState: { isSubmitting, errors },
   } = methods;
   const onSubmit: SubmitHandler<DeliveryAddress> = async (data) => {
-    console.log(data);
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      console.log(data);
+    } catch (error) {
+      setError("root", { message: "*All inputs must be complete and valid" });
+    }
+  };
+
+  const errorCheck = () => {
+    if (
+      !errors.phoneNumber &&
+      !errors.email &&
+      !errors.town &&
+      !errors.postcode &&
+      !errors.addressLine &&
+      !errors.lastName &&
+      !errors.firstName
+    ) {
+      setIsErrorInForm(false);
+    } else {
+      setIsErrorInForm(true);
+    }
   };
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.addressForm}>
+      <form
+        onChange={() => errorCheck()}
+        onSubmit={handleSubmit(onSubmit)}
+        className={styles.addressForm}
+      >
         <div className={styles.inputs}>
           <div className={styles.nameField}>
             <DeliveryInput id="firstName" label="First Name*" />
@@ -49,6 +78,7 @@ const DeliveryForm = () => {
               <DeliveryInput id="town" label="Town/City*" />
               <DeliveryInput id="postcode" label="Postcode*" />
             </div>
+            {errors.postcode && <div>postcode error</div>}
             <div className={styles.emailPhone}>
               <DeliveryInput id="email" label="Email*" />
               <DeliveryInput id="phoneNumber" label="Phone Number*" />
@@ -56,18 +86,16 @@ const DeliveryForm = () => {
           </div>
         </div>
         <button
-          disabled={isSubmitting}
+          disabled={isErrorInForm}
           className={styles.submitButton}
           type="submit"
+          onClick={() => cart.setOrderStatus(true)}
         >
-          save details
+          Save details
         </button>
+        {isErrorInForm && <div>*All inputs must be complete and valid</div>}
 
-        {!isSubmitted ? (
-          <div className={styles.errorMessage}>
-            *All inputs must be complete and valid
-          </div>
-        ) : (
+        {cart.orderSubmitStatus && (
           <motion.div
             initial={{ opacity: 1 }}
             animate={{ opacity: 0, transition: { duration: 0.4, delay: 1.5 } }}
