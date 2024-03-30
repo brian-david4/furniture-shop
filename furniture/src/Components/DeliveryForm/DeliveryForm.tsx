@@ -30,7 +30,7 @@ const DeliveryForm = () => {
   const {
     handleSubmit,
     setError,
-    formState: { isSubmitting, errors },
+    formState: { errors },
   } = methods;
   const onSubmit: SubmitHandler<DeliveryAddress> = async (data) => {
     try {
