@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Img } from "react-image";
-import { AnimatePresence, motion } from "framer-motion";
-import HomeFurniture from "../../Components/HomeFurniture/HomeFurniture";
+import { motion } from "framer-motion";
+
 import { useMousePosition } from "../../hooks/useMousePosition";
 import HomeNavBar from "../../Components/HomeNavBar/HomeNavBar";
 import HomeFooter from "../../Components/HomeFooter/HomeFooter";
-import HomeFurnContent from "../../Components/HomeFurnContent/HomeFurnContent";
+
 import styles from "./home.module.css";
 import bgWEBP from "/00.webp";
 import bgJPG from "/00.jpg";
@@ -14,20 +14,6 @@ import bgWEBPbw from "/00BW.webp";
 const Home = () => {
   const [isHovered, setHovered] = useState(false);
 
-  const [furnitureHovered, setFurniture] = useState(false);
-  const [rugsHovered, setRugs] = useState(false);
-  const [decorHovered, setDecor] = useState(false);
-
-  const activeWrap = (key: number) => {
-    if (key === 0) return setFurniture(true);
-    if (key === 1) return setRugs(true);
-    if (key === 2) return setDecor(true);
-  };
-  const inactiveWrap = (key: number) => {
-    if (key === 0) return setFurniture(false);
-    if (key === 1) return setRugs(false);
-    if (key === 2) return setDecor(false);
-  };
   const { x, y } = useMousePosition();
   const size = isHovered ? 350 : 75;
 
@@ -42,11 +28,7 @@ const Home = () => {
     <>
       <div className={styles.homeBg}>
         <Img
-          className={`${styles.colorBG} ${
-            furnitureHovered || rugsHovered || decorHovered
-              ? styles.brightness
-              : ""
-          }`}
+          className={styles.colorBG}
           draggable={false}
           src={[bgWEBP, bgJPG]}
         />
@@ -71,18 +53,7 @@ const Home = () => {
         </div>
 
         <HomeNavBar />
-        <HomeFooter
-          activeWrap={(key) => activeWrap(key)}
-          inactiveWrap={(key) => inactiveWrap(key)}
-        />
-
-        <AnimatePresence mode="wait">
-          {furnitureHovered && (
-            <HomeFurniture>
-              <HomeFurnContent />
-            </HomeFurniture>
-          )}
-        </AnimatePresence>
+        <HomeFooter />
       </div>
     </>
   );
