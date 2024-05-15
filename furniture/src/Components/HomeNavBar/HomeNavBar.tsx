@@ -12,7 +12,6 @@ const HomeNavBar = () => {
           <Link className={styles.navLink} to="/about">
             about
           </Link>
-          <div className={styles.navLink}>cart</div>
         </div>
       </div>
     </>

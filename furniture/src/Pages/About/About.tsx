@@ -2,6 +2,7 @@ import { useScroll } from "framer-motion";
 import AboutSection from "../../Components/AboutSection/AboutSection";
 import styles from "./about.module.css";
 import { useRef } from "react";
+import AboutTitle from "../../Components/AboutTitle/AboutTitle";
 
 const About = () => {
   const ref = useRef(null);
@@ -13,20 +14,7 @@ const About = () => {
     <>
       <div ref={ref} className={styles.pageWrapper}>
         <AboutSection top scrollProgress={scrollYProgress} colour="#edcdaf">
-          <div
-            style={{
-              height: "200px",
-              width: "200px",
-              backgroundColor: "red",
-              display: "grid",
-              placeItems: "center",
-            }}
-          >
-            <img
-              style={{ height: "95%", width: "95%", objectFit: "cover" }}
-              src="/00.jpg"
-            />
-          </div>
+          <AboutTitle />
         </AboutSection>
         <AboutSection scrollProgress={scrollYProgress} colour="#303852" />
       </div>
