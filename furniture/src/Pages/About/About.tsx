@@ -14,10 +14,15 @@ const About = () => {
     target: ref,
     offset: ["start start", "end end"],
   });
+
+  // motion styles
   const imageY = useTransform(scrollYProgress, [0, 1], ["20%", "15%"]);
   const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
-  const [introPlaying, setIntroPlay] = useState(true);
+  const desc = useTransform(scrollYProgress, [0, 1], [1, 0.6]);
+  const desc2 = useTransform(scrollYProgress, [0, 1], [1, 0.75]);
+  const fontSize = useTransform(scrollYProgress, [0, 1], [2.5, 3]);
 
+  const [introPlaying, setIntroPlay] = useState(true);
   const titleAnimLength: number = 4;
 
   useEffect(() => {
@@ -35,23 +40,25 @@ const About = () => {
           scrollProgress={scrollYProgress}
           colour="var(--checkout-navbar-colour)"
         >
-          <AboutTitle />
+          <AboutTitle scrollProgress={scrollYProgress} />
 
-          <div
+          <motion.div
+            style={{ scale: desc }}
             className={`${styles.desc1} ${!introPlaying ? styles.visible : ""}`}
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi atque
             velit veniam esse tenetur aperiam sequi libero molestiae optio
             delectus.
-          </div>
+          </motion.div>
 
-          <div
+          <motion.div
+            style={{ scale: desc2, fontSize: `${fontSize}vw` }}
             className={`${styles.desc2} ${!introPlaying ? styles.visible : ""}`}
           >
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             Consequuntur voluptate beatae minus magnam ducimus cum eius itaque
             sit consectetur deserunt.
-          </div>
+          </motion.div>
 
           <motion.div
             style={{ top: imageY, scale: imageScale }}
