@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import AboutSection from "../../Components/AboutSection/AboutSection";
 import styles from "./about.module.css";
 import { useEffect, useRef, useState } from "react";
@@ -24,6 +24,10 @@ const About = () => {
 
   const [introPlaying, setIntroPlay] = useState(true);
   const titleAnimLength: number = 4;
+
+  // image2 anims
+  const imgRef = useRef(null);
+  const isInView = useInView(imgRef, { once: true, amount: 0.7 });
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -79,7 +83,33 @@ const About = () => {
           </motion.div>
         </AboutSection>
 
-        <AboutSection scrollProgress={scrollYProgress} colour="#ffffe6" />
+        <AboutSection scrollProgress={scrollYProgress} colour="#ffffe6">
+          <div ref={imgRef} className={styles.bg}>
+            <h1 className={styles.contactTitle}>
+              We continue to strive for the highest quality. To keep up with
+              that we need your help.
+            </h1>
+            <h3 className={styles.contactEmail}>
+              <a href="mailto:perch@highland.com">perch@highland.com</a>
+            </h3>
+            <div
+              className={`${styles.imageWrapper2} ${
+                isInView ? styles.clipMax : ""
+              }`}
+            >
+              <img src="00.jpg" className={styles.imgAbout2} />
+              <motion.img
+                animate={{ top: isInView ? "100%" : 0 }}
+                src="00.jpg"
+                className={styles.imgAbout1}
+                transition={{
+                  duration: 2,
+                  ease: [0.76, 0, 0.24, 1],
+                }}
+              />
+            </div>
+          </div>
+        </AboutSection>
       </div>
     </>
   );
