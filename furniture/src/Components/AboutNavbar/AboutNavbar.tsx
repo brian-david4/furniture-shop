@@ -7,7 +7,7 @@ const AboutNavbar = () => {
       <div className={styles.navbar}>
         <div className={styles.links}>
           <Link to="/">home</Link>
-          <Link to="/shop">shop</Link>
+          <Link to="/products">shop</Link>
         </div>
       </div>
     </>
