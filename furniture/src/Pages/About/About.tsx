@@ -46,18 +46,18 @@ const About = () => {
             style={{ scale: desc }}
             className={`${styles.desc1} ${!introPlaying ? styles.visible : ""}`}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi atque
-            velit veniam esse tenetur aperiam sequi libero molestiae optio
-            delectus.
+            We sarted in <b>1894</b>, a small family business making bespoke
+            furniture for a small catalonian village. News about us got around
+            fast, spreading from town to city, we never forgot our roots nor the
+            spirit of our work.
           </motion.div>
 
           <motion.div
             style={{ scale: desc2, fontSize: `${fontSize}vw` }}
             className={`${styles.desc2} ${!introPlaying ? styles.visible : ""}`}
           >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Consequuntur voluptate beatae minus magnam ducimus cum eius itaque
-            sit consectetur deserunt.
+            Fast forward to now we are still creating quality furniture. Still
+            handmade. Still elegant. Still modern.
           </motion.div>
 
           {/* images */}
@@ -78,7 +78,8 @@ const About = () => {
             <img src="/about-images/about-image1.jpg" />
           </motion.div>
         </AboutSection>
-        <AboutSection scrollProgress={scrollYProgress} colour="#303852" />
+
+        <AboutSection scrollProgress={scrollYProgress} colour="#ffffe6" />
       </div>
     </>
   );
