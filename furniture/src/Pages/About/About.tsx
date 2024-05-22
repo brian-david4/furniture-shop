@@ -18,7 +18,7 @@ const About = () => {
   // motion styles
   const imageY = useTransform(scrollYProgress, [0, 1], ["20%", "15%"]);
   const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
-  const desc = useTransform(scrollYProgress, [0, 1], [1, 0.6]);
+  const desc = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
   const desc2 = useTransform(scrollYProgress, [0, 1], [1, 0.75]);
   const fontSize = useTransform(scrollYProgress, [0, 1], [2.5, 3]);
 
@@ -60,11 +60,22 @@ const About = () => {
             sit consectetur deserunt.
           </motion.div>
 
+          {/* images */}
           <motion.div
             style={{ top: imageY, scale: imageScale }}
-            className={`${styles.aboutImage} ${loaded ? styles.visible : ""}`}
+            className={`${styles.aboutImage} ${styles.image1} ${
+              loaded ? styles.visible : ""
+            }`}
           >
-            <img src="/00BW.jpg" />
+            <img src="/about-images/about-image2.jpg" />
+          </motion.div>
+
+          <motion.div
+            className={`${styles.aboutImage} ${styles.image2} ${
+              loaded ? styles.visible : ""
+            }`}
+          >
+            <img src="/about-images/about-image1.jpg" />
           </motion.div>
         </AboutSection>
         <AboutSection scrollProgress={scrollYProgress} colour="#303852" />

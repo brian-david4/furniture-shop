@@ -15,6 +15,9 @@
   opacity: 0;
   mix-blend-mode: difference;
   color: var(--cart-pink);
+  backdrop-filter: blur(1px);
+  border-radius: 3px;
+  padding: 10px;
 }
 .desc1 {
   width: 50vw;
@@ -23,7 +26,7 @@
 }
 .desc2 {
   right: 5vmin;
-  top: 30vh;
+  top: 50vh;
   width: 30vw;
   font-size: 2.5vw;
   letter-spacing: 0.05ch;
@@ -34,10 +37,6 @@
 }
 .aboutImage {
   position: absolute;
-  width: 70vw;
-  height: 75vh;
-  left: 5vmin;
-  top: 10vh;
   z-index: -1;
   transition: opacity 1.3s cubic-bezier(0.25, 1, 0.5, 1);
   opacity: 0;
@@ -46,4 +45,20 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+.image1 {
+  width: 70vw;
+  height: 75vh;
+  left: 5vmin;
+  top: 10vh;
+  transition-delay: 1s;
+  filter: grayscale(1);
+}
+.image2 {
+  right: 5vw;
+  top: 40vh;
+  width: 100vw;
+  height: 40vh;
+  z-index: -2;
+  object-position: top;
 }
