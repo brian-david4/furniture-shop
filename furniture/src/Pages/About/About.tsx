@@ -99,11 +99,14 @@ const About = () => {
             >
               <img src="00.jpg" className={styles.imgAbout2} />
               <motion.img
-                animate={{ top: isInView ? "100%" : 0 }}
+                animate={{
+                  top: isInView ? "100%" : 0,
+                  rotate: isInView ? 150 : 0,
+                }}
                 src="00.jpg"
                 className={styles.imgAbout1}
                 transition={{
-                  duration: 2,
+                  duration: 2.5,
                   ease: [0.76, 0, 0.24, 1],
                 }}
               />

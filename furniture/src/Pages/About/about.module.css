@@ -123,6 +123,8 @@
 .imgAbout1 {
   z-index: -1;
   border-radius: 50%;
+  width: 90vw;
+  height: 90vw;
 }
 .clipMax {
   clip-path: circle(101vh) !important;
