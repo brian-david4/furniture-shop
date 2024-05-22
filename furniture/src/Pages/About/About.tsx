@@ -3,6 +3,7 @@ import AboutSection from "../../Components/AboutSection/AboutSection";
 import styles from "./about.module.css";
 import { useEffect, useRef, useState } from "react";
 import AboutTitle from "../../Components/AboutTitle/AboutTitle";
+import AboutNavbar from "../../Components/AboutNavbar/AboutNavbar";
 
 const About = () => {
   const [loaded, setLoaded] = useState(false);
@@ -85,6 +86,7 @@ const About = () => {
 
         <AboutSection scrollProgress={scrollYProgress} colour="#ffffe6">
           <div ref={imgRef} className={styles.bg}>
+            <AboutNavbar />
             <h1 className={styles.contactTitle}>
               We continue to strive for the highest quality. To keep up with
               that we need your help.
