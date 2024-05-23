@@ -102,8 +102,7 @@ const About = () => {
               <img src="00.jpg" className={styles.imgAbout2} />
               <motion.img
                 animate={{
-                  top: isInView ? "100%" : 0,
-                  rotate: isInView ? 150 : 0,
+                  opacity: isInView ? 0 : 1,
                 }}
                 src="00.jpg"
                 className={styles.imgAbout1}
