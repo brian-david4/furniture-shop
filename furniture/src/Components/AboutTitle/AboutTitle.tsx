@@ -1,18 +1,14 @@
-import { MotionValue, motion, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import styles from "./abtTtl.module.css";
 
-interface AboutTitleProps {
-  scrollProgress: MotionValue<number>;
-}
+interface AboutTitleProps {}
 
-const AboutTitle = ({ scrollProgress }: AboutTitleProps) => {
-  const scale = useTransform(scrollProgress, [0, 1], [1, 1.5]);
+const AboutTitle = ({}: AboutTitleProps) => {
   const opacityFade = 0.8;
   const mainDelay = 1 + opacityFade;
   return (
     <>
       <motion.div
-        style={{ scale }}
         initial={{ gap: "2vw", scale: 2.8, top: "50%", opacity: 0 }}
         animate={{ top: "2vh", gap: "20vw", scale: 1, opacity: 1 }}
         transition={{

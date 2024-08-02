@@ -1,4 +1,6 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import Lenis from "lenis";
+
 import AboutSection from "../../Components/AboutSection/AboutSection";
 import styles from "./about.module.css";
 import { useEffect, useRef, useState } from "react";
@@ -6,6 +8,23 @@ import AboutTitle from "../../Components/AboutTitle/AboutTitle";
 import AboutNavbar from "../../Components/AboutNavbar/AboutNavbar";
 
 const About = () => {
+  // Lenis smooth scroll
+  useEffect(() => {
+    const lenis = new Lenis({
+      lerp: 0.05,
+      wheelMultiplier: 0.8,
+      touchMultiplier: 0.8,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => lenis.destroy();
+  }, []);
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
     setTimeout(() => setLoaded(true), 2300);
@@ -17,10 +36,9 @@ const About = () => {
   });
 
   // motion styles
-  const imageY = useTransform(scrollYProgress, [0, 1], ["20%", "15%"]);
-  const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
-  const desc = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
-  const desc2 = useTransform(scrollYProgress, [0, 1], [1, 0.75]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
+  const desc = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
+  const desc2 = useTransform(scrollYProgress, [0, 1], [1, 0.87]);
   const fontSize = useTransform(scrollYProgress, [0, 1], [2.5, 3]);
 
   const [introPlaying, setIntroPlay] = useState(true);
@@ -45,7 +63,7 @@ const About = () => {
           scrollProgress={scrollYProgress}
           colour="var(--checkout-navbar-colour)"
         >
-          <AboutTitle scrollProgress={scrollYProgress} />
+          <AboutTitle />
 
           <motion.div
             style={{ scale: desc }}
@@ -67,7 +85,7 @@ const About = () => {
 
           {/* images */}
           <motion.div
-            style={{ top: imageY, scale: imageScale }}
+            style={{ scale: imageScale }}
             className={`${styles.aboutImage} ${styles.image1} ${
               loaded ? styles.visible : ""
             }`}

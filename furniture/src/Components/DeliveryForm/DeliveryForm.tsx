@@ -1,11 +1,12 @@
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
+import { motion } from "framer-motion";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useContext, useState } from "react";
+
 import DeliveryInput from "../DeliveryInput/DeliveryInput";
 import DeliveryInputMax from "../DeliveryInputMax/DeliveryInputMax";
 import styles from "./deliveryform.module.css";
-import { motion } from "framer-motion";
-import { useContext, useState } from "react";
 import { CartContext } from "../../Data/CartContext";
 
 const postcodeRegex = new RegExp(/^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i);
