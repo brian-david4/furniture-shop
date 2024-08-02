@@ -10,7 +10,6 @@
 @media (min-width: 512px) {
   .productLayout {
     grid-template-columns: repeat(2, 1fr);
-    top: calc(var(--header-height));
   }
 }
 @media (min-width: 1020px) {

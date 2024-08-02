@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import MainNavBar from "../Components/MainNavBar/MainNavBar";
 import { lazy, Suspense } from "react";
 
@@ -12,12 +11,6 @@ const Shop = () => {
   return (
     <>
       <MainNavBar />
-      <Link
-        style={{ position: "absolute", top: "10vh" }}
-        to="/products/shaggyRug"
-      >
-        shaggy rug
-      </Link>
 
       <ProductLayout>
         {products.map((product, index) => (
