@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import MainNavBar from "../Components/MainNavBar/MainNavBar";
-import ProductCard from "../Components/ProductCard/ProductCard";
+import { lazy, Suspense } from "react";
+
 import ProductLayout from "../Components/ProductLayout/ProductLayout";
 import { products } from "../Data/data";
+import ProductCardFallback from "../Components/ProductCardFallback/ProductCardFallback";
+
+const ProductCard = lazy(() => import("../Components/ProductCard/ProductCard"));
 
 const Shop = () => {
   return (
@@ -17,7 +21,12 @@ const Shop = () => {
 
       <ProductLayout>
         {products.map((product, index) => (
-          <ProductCard product={product} key={index} />
+          <Suspense
+            key={`prodC_${index}`}
+            fallback={<ProductCardFallback product={product} />}
+          >
+            <ProductCard product={product} />
+          </Suspense>
         ))}
       </ProductLayout>
     </>
