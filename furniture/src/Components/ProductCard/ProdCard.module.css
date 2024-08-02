@@ -32,7 +32,9 @@
 .prodCaption::after,
 .prodPrice::after {
   display: block;
-  position: relative;
+  position: absolute;
+  bottom: 2px;
+  left: 0;
   content: "";
   margin: auto;
   height: 1px;
